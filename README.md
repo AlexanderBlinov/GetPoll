@@ -87,16 +87,13 @@ API не будет RESTful, так как в нем не будет реали�
       "options": [
         {
           "id": 1,
-          "name": "Norway",
-          "votes": 0
+          "name": "Norway"
         },
         {
           "id": 2,
-          "name": "Iceland",
-          "votes": 0
+          "name": "Iceland"
         }
-      ],
-      "totalVotes": 0
+      ]
     }
     ```
 

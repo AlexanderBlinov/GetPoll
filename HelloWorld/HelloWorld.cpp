@@ -4,6 +4,7 @@
 #include <fastcgi2/request.h>
 
 #include <iostream>
+#include <sstream>
 
 class HelloWorld : virtual public fastcgi::Component, virtual public fastcgi::Handler {
 
@@ -20,7 +21,9 @@ public:
         virtual void onUnload() {
         }
         virtual void handleRequest(fastcgi::Request *request, fastcgi::HandlerContext *context) {
-                request->setHeader("HelloWorld-Header", "Hello, World!");
+                request->setContentType("text/plain");
+                std::stringbuf buffer("Hello, World!\n");
+                request->write(&buffer);
         }
 
 };

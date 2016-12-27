@@ -1,0 +1,1 @@
+/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles/GetPoll.dir

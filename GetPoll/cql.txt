@@ -1,0 +1,38 @@
+CREATE KEYSPACE GetPoll WITH REPLICATION = {
+'class' : 'SimpleStrategy',
+'replication_factor' : 3
+} AND DURABLE_WRITES = true;
+
+CREATE TYPE getpoll.option ( id int, name text );
+
+CREATE TABLE IF NOT EXISTS getpoll.polls (
+id timeuuid,
+name text,
+author text,
+description text,
+creationDateTime text,
+options list<frozen <getpoll.option>>,
+primary key (id, creationDateTime)
+) WITH CLUSTERING ORDER BY (creationDateTime DESC);
+
+CREATE TABLE IF NOT EXISTS getpoll.poll_votes (
+pollid timeuuid,
+totalVotes counter,
+primary key (pollid)
+);
+
+CREATE TABLE IF NOT EXISTS getpoll.poll_option_votes (
+pollid timeuuid,
+optionid int,
+votes counter,
+primary key (pollid, optionid)
+);
+
+CREATE TABLE IF NOT EXISTS getpoll.votes (
+id timeuuid,
+pollid timeuuid,
+optionid int,
+author text,
+hash_prefix int,
+primary key ((pollid, hash_prefix), id, author)
+) WITH CLUSTERING ORDER BY (id DESC, author ASC);

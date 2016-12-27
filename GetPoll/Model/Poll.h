@@ -11,11 +11,17 @@
 #include "PollOption.h"
 
 class Poll {
+    std::string id;
+
 public:
-    std::string id, author, description, name, creationDateTime;
+    std::string author, description, name, creationDateTime;
     std::vector<std::string> links;
     std::vector<PollOption> options;
     int totalVotes;
+
+    Poll(std::string id) : id(id) {};
+
+    std::string const& getId() const;
 };
 
 #endif //GETPOLL_POLL_H

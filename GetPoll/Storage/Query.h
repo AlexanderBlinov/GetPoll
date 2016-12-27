@@ -8,41 +8,40 @@
 #include "../Model/Poll.h"
 #include "../Model/Vote.h"
 
-const char* select_polls_query(int limit, const char* creationDateTime);
+std::string select_polls_query(int limit, std::string const* creationDateTime);
 
-const char* select_poll_query(const char* pollid);
+std::string select_poll_query(std::string const& pollid);
 
-const char* select_poll_votes_query(const char* pollid);
+std::string select_poll_votes_query(std::string const& pollid);
 
-const char* select_poll_option_votes_query(const char* pollid);
+std::string select_poll_option_votes_query(std::string const& pollid);
 
-const char* select_votes_query(const char* pollid);
+std::string select_votes_query(std::string const& pollid);
 
-const char* select_vote_query(const char* id);
+std::string select_vote_query(std::string const& id);
 
-const char* insert_poll_query(Poll const& poll);
+std::string insert_poll_query(Poll const& poll);
 
-const char* insert_vote_query(const char* pollid, Vote const& vote);
+std::string insert_vote_query(std::string const& pollid, Vote const& vote);
 
-const char* insert_option_votes_query(const char* pollid, int optionid);
+std::string insert_option_votes_query(std::string const& pollid, int optionid);
 
-const char* insert_poll_votes_query(const char* pollid);
+std::string insert_poll_votes_query(std::string const& pollid);
 
-const char* update_option_votes_query(const char* pollid, int optionid, int count_delta);
+std::string update_option_votes_query(std::string const& pollid, int optionid, int count_delta);
 
-const char* update_poll_votes_query(const char* pollid, int count_delta);
+std::string update_poll_votes_query(std::string const& pollid, int count_delta);
 
-const char* update_vote_query(Vote const& vote);
+std::string update_vote_query(Vote const& vote);
 
-const char* delete_poll_query(const char* pollid);
+std::string delete_poll_query(std::string const& pollid);
 
-const char* delete_vote_query(const char* voteid);
+std::string delete_vote_query(std::string const& voteid);
 
-const char* delete_votes_query(const char* pollid);
+std::string delete_votes_query(std::string const& pollid);
 
-const char* delete_poll_votes_query(const char* pollid);
+std::string delete_poll_votes_query(std::string const& pollid);
 
-const char* delete_option_votes_query(const char* pollid);
-
+std::string delete_option_votes_query(std::string const& pollid);
 
 #endif //GETPOLL_QUERY_H

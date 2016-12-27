@@ -38,12 +38,26 @@ Vote.h
 string
 -
 
+/home/ubuntu/Desktop/GetPoll/GetPoll/Network/RequestHandler.cpp
+fastcgi2/component.h
+-
+fastcgi2/component_factory.h
+-
+fastcgi2/handler.h
+-
+fastcgi2/request.h
+-
+sstream
+-
+
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.cpp
 clocale
 -
 string
 -
 sstream
+-
+functional
 -
 Query.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.h

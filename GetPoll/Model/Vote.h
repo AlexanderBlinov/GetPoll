@@ -8,9 +8,15 @@
 #include <string>
 
 class Vote {
+    std::string id;
+
 public:
-    std::string id, author;
+    std::string author;
     int optionId;
+
+    Vote(std::string id) : id(id) {};
+
+    std::string const& getId() const;
 };
 
 #endif //GETPOLL_VOTE_H

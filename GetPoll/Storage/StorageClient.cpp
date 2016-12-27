@@ -45,14 +45,14 @@ CassSession *StorageClient::getSession() {
     return this->session;
 }
 
-int StorageClient::perform_query(const char* query, const CassResult** result, const char** message) {
+int StorageClient::perform_query(std::string& query, const CassResult** result, const char** message) {
     int statusCode = QUERY_FAILURE;
 
     CassFuture* connect_future = this->connect(message);
     if (connect_future) {
         CassFuture* close_future = NULL;
 
-        CassStatement* statement = cass_statement_new(query, 0);
+        CassStatement* statement = cass_statement_new(query.c_str(), 0);
 
         CassFuture* result_future = cass_session_execute(this->session, statement);
         cass_statement_free(statement);
@@ -111,14 +111,11 @@ int StorageClient::perform_batch_query(std::vector<std::string>& queries, const 
     return statusCode;
 }
 
-int StorageClient::polls_get(std::string& creationDateTime, std::vector<Poll>& result, const char** message) {
+int StorageClient::polls_get(std::string const& creationDateTime, std::vector<Poll>& result, const char** message) {
     const CassResult* query_result = NULL;
 
     int limit = 10;
-    const char* query = select_polls_query(limit, creationDateTime.c_str());
-
-    delete[] query;
-
+    std::string query = select_polls_query(limit, &creationDateTime);
     int statusCode = this->perform_query(query, &query_result, message);
     if (statusCode != QUERY_SUCCESS) {
         return  statusCode;
@@ -143,8 +140,7 @@ int StorageClient::polls_get(std::string& creationDateTime, std::vector<Poll>& r
         value = cass_row_get_column_by_name(row, "name");
         cass_value_get_string(value, &name, &name_length);
 
-        Poll poll;
-        poll.id = std::string(id, id_length);
+        Poll poll(std::string(id, id_length));
         poll.creationDateTime = std::string(creationDT, creationDateTime_length);
         poll.name = std::string(name, name_length);
 
@@ -157,14 +153,11 @@ int StorageClient::polls_get(std::string& creationDateTime, std::vector<Poll>& r
     return statusCode;
 }
 
-int StorageClient::poll_get(std::string& id, std::vector<Poll> &result, const char** message) {
+int StorageClient::poll_get(std::string const& id, std::vector<Poll>& result, const char** message) {
     const CassResult* query_result = NULL;
 
-    const char* query = select_poll_query(id.c_str());
-
+    std::string query = select_poll_query(id);
     int statusCode = this->perform_query(query, &query_result, message);
-
-    delete[] query;
 
     if (statusCode != QUERY_SUCCESS) {
         return statusCode;
@@ -193,8 +186,7 @@ int StorageClient::poll_get(std::string& id, std::vector<Poll> &result, const ch
         value = cass_row_get_column_by_name(row, "author");
         cass_value_get_string(value, &author, &author_length);
 
-        Poll poll;
-        poll.id = id;
+        Poll poll(id);
         poll.creationDateTime = std::string(creationDateTime, creationDateTime_length);
         poll.name = std::string(name, name_length);
         poll.description = std::string(description, description_length);
@@ -235,10 +227,8 @@ int StorageClient::poll_get(std::string& id, std::vector<Poll> &result, const ch
         cass_iterator_free(iter);
         cass_result_free(query_result);
 
-        query = select_poll_votes_query(id.c_str());
+        query = select_poll_votes_query(id);
         statusCode = this->perform_query(query, &query_result, message);
-
-        delete[] query;
 
         if (statusCode != QUERY_SUCCESS) {
             return  statusCode;
@@ -250,10 +240,8 @@ int StorageClient::poll_get(std::string& id, std::vector<Poll> &result, const ch
         value = cass_row_get_column_by_name(row, "totalVotes");
         cass_value_get_int32(value, &(poll.totalVotes));
 
-        query = select_poll_option_votes_query(id.c_str());
+        query = select_poll_option_votes_query(id);
         statusCode = this->perform_query(query, &query_result, message);
-
-        delete[] query;
 
         if (statusCode != QUERY_SUCCESS) {
             return statusCode;
@@ -284,12 +272,10 @@ int StorageClient::poll_get(std::string& id, std::vector<Poll> &result, const ch
     return statusCode;
 }
 
-int StorageClient::votes_get(std::string& pollid, std::vector<Vote>& result, const char** message) {
-    const char* query = select_votes_query(pollid.c_str());
+int StorageClient::votes_get(std::string const& pollid, std::vector<Vote>& result, const char** message) {
+    std::string query = select_votes_query(pollid);
     const CassResult* query_result = NULL;
     int statusCode = this->perform_query(query, &query_result, message);
-
-    delete[] query;
 
     if (statusCode != QUERY_SUCCESS) {
         return statusCode;
@@ -318,8 +304,7 @@ int StorageClient::votes_get(std::string& pollid, std::vector<Vote>& result, con
         int optionid;
         cass_value_get_int32(value, &optionid);
 
-        Vote vote;
-        vote.id = std::string(id, id_length);
+        Vote vote(std::string(id, id_length));
         vote.author = std::string(author, author_length);
         vote.optionId = optionid;
 
@@ -332,12 +317,10 @@ int StorageClient::votes_get(std::string& pollid, std::vector<Vote>& result, con
     return statusCode;
 }
 
-int StorageClient::vote_get(std::string& id, std::vector<Vote> &result, const char **message) {
-    const char* query = select_vote_query(id.c_str());
+int StorageClient::vote_get(std::string const& id, std::vector<Vote>& result, const char **message) {
+    std::string query = select_vote_query(id);
     const CassResult* query_result = NULL;
     int statusCode = this->perform_query(query, &query_result, message);
-
-    delete[] query;
 
     if (statusCode != QUERY_SUCCESS) {
         return statusCode;
@@ -364,8 +347,7 @@ int StorageClient::vote_get(std::string& id, std::vector<Vote> &result, const ch
         int optionid;
         cass_value_get_int32(value, &optionid);
 
-        Vote vote;
-        vote.id = std::string(id, id_length);
+        Vote vote(std::string(id, id_length));
         vote.author = std::string(author, author_length);
         vote.optionId = optionid;
 
@@ -377,32 +359,30 @@ int StorageClient::vote_get(std::string& id, std::vector<Vote> &result, const ch
     return statusCode;
 }
 
-int StorageClient::poll_new(Poll const &poll, const char **message) {
+int StorageClient::poll_new(Poll const& poll, const char **message) {
     std::vector<std::string> queries;
-    queries.push_back(std::string(insert_poll_query(poll)));
-    queries.push_back(std::string(insert_poll_votes_query(poll.id.c_str())));
+    queries.push_back(insert_poll_query(poll));
+    queries.push_back(insert_poll_votes_query(poll.getId()));
     for (std::vector<PollOption>::const_iterator it = poll.options.begin(); it != poll.options.end(); ++it) {
-        queries.push_back(std::string(insert_option_votes_query(poll.id.c_str(), it->id)));
+        queries.push_back(insert_option_votes_query(poll.getId(), it->id));
     }
 
     return this->perform_batch_query(queries, message);
 }
 
-int StorageClient::vote_new(std::string& pollid, Vote const &vote, const char** message) {
+int StorageClient::vote_new(std::string const& pollid, Vote const &vote, const char** message) {
     std::vector<std::string> queries;
-    queries.push_back(std::string(insert_vote_query(pollid.c_str(), vote)));
-    queries.push_back(std::string(update_option_votes_query(pollid.c_str(), vote.optionId, 1)));
-    queries.push_back(std::string(update_poll_votes_query(pollid.c_str(), 1)));
+    queries.push_back(insert_vote_query(pollid, vote));
+    queries.push_back(update_option_votes_query(pollid, vote.optionId, 1));
+    queries.push_back(update_poll_votes_query(pollid, 1));
 
     return this->perform_batch_query(queries, message);
 }
 
-int StorageClient::vote_update(std::string& pollid, Vote const &vote, const char **message) {
-    const char* query = select_vote_query(vote.id.c_str());
+int StorageClient::vote_update(std::string const& pollid, Vote const &vote, const char **message) {
+    std::string query = select_vote_query(vote.getId());
     const CassResult* query_result = NULL;
     int statusCode = this->perform_query(query, &query_result, message);
-
-    delete[] query;
 
     if (statusCode != QUERY_SUCCESS) {
         return statusCode;
@@ -418,9 +398,9 @@ int StorageClient::vote_update(std::string& pollid, Vote const &vote, const char
         cass_value_get_int32(value, &optionid);
 
         std::vector<std::string> queries;
-        queries.push_back(std::string(update_poll_votes_query(pollid.c_str(), -1)));
-        queries.push_back(std::string(update_option_votes_query(pollid.c_str(), optionid, -1)));
-        queries.push_back(std::string(update_vote_query(vote)));
+        queries.push_back(update_poll_votes_query(pollid, -1));
+        queries.push_back(update_option_votes_query(pollid, optionid, -1));
+        queries.push_back(update_vote_query(vote));
 
         statusCode = this->perform_batch_query(queries, message);
     }
@@ -428,21 +408,21 @@ int StorageClient::vote_update(std::string& pollid, Vote const &vote, const char
     return statusCode;
 }
 
-int StorageClient::poll_delete(std::string& id, const char** message) {
+int StorageClient::poll_delete(std::string const& id, const char** message) {
     std::vector<std::string> queries;
-    queries.push_back(std::string(delete_option_votes_query(id.c_str())));
-    queries.push_back(std::string(delete_poll_votes_query(id.c_str())));
-    queries.push_back(std::string(delete_votes_query(id.c_str())));
-    queries.push_back(std::string(delete_poll_query(id.c_str())));
+    queries.push_back(delete_option_votes_query(id));
+    queries.push_back(delete_poll_votes_query(id));
+    queries.push_back(delete_votes_query(id));
+    queries.push_back(delete_poll_query(id));
 
     return this->perform_batch_query(queries, message);
 }
 
-int StorageClient::vote_delete(std::string& pollid, Vote const& vote, const char **message) {
+int StorageClient::vote_delete(std::string const& pollid, Vote const& vote, const char **message) {
     std::vector<std::string> queries;
-    queries.push_back(std::string(update_poll_votes_query(pollid.c_str(), -1)));
-    queries.push_back(std::string(update_option_votes_query(pollid.c_str(), vote.optionId, -1)));
-    queries.push_back(std::string(delete_vote_query(vote.id.c_str())));
+    queries.push_back(update_poll_votes_query(pollid, -1));
+    queries.push_back(update_option_votes_query(pollid, vote.optionId, -1));
+    queries.push_back(delete_vote_query(vote.getId()));
 
     return this->perform_batch_query(queries, message);
 }

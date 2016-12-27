@@ -5,3 +5,6 @@
 #include "Vote.h"
 
 
+std::string const& Vote::getId() const {
+    return id;
+}

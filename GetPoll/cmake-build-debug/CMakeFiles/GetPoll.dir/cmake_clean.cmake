@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/GetPoll.dir/Model/Poll.cpp.o"
   "CMakeFiles/GetPoll.dir/Model/Vote.cpp.o"
   "CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o"
@@ -10,6 +10,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/GetPoll.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/GetPoll.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

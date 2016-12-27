@@ -1,0 +1,27 @@
+cqlsh> CREATE KEYSPACE GetPoll WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 } AND DURABLE_WRITES = true;
+cqlsh> create type getpoll.option (
+   ... id int,
+   ... name text
+   ... );
+cqlsh> create table if not exists getpoll.polls (
+   ... id timeuuid,
+   ... name text,
+   ... author text,
+   ... description text,
+   ... creationDateTime text,
+   ... options list<frozen <getpoll.option>>,
+   ... primary key (id, creationDateTime)
+   ... ) with CLUSTERING order by (creationDateTime DESC)
+   ... ;
+cqlsh> create table if not exists getpoll.poll_votes (
+   ... pollid timeuuid,
+   ... totalVotes counter,
+   ... primary key (pollid)
+   ... );
+cqlsh> create table if not exists getpoll.poll_option_votes (
+   ... pollid timeuuid,
+   ... optionid int,
+   ... votes counter
+   ... , primary key (pollid, optionid)
+   ... );
+cqlsh> create table if not exists getpoll.votes ( id timeuuid, pollid timeuuid, optionid int, author text, creationDateTime text, hash_prefix int, primary key ((pollid, hash_prefix), creationDateTime, author) ) with CLUSTERING order by (creationDateTime DESC, author ASC);

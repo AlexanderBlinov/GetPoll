@@ -5,8 +5,8 @@
 #ifndef GETPOLL_QUERY_H
 #define GETPOLL_QUERY_H
 
-#include "../Model/Poll.h"
-#include "../Model/Vote.h"
+class Poll;
+class Vote;
 
 std::string select_polls_query(int limit, std::string const* creationDateTime);
 

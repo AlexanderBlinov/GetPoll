@@ -16,6 +16,7 @@
 extern int const QUERY_SUCCESS;
 extern int const QUERY_FAILURE;
 
+
 class StorageClient {
  private:
      CassCluster* cluster;
@@ -35,7 +36,7 @@ class StorageClient {
      StorageClient(const char* hosts);
      ~StorageClient();
 
-     int polls_get(std::string const& creationDateTime, std::vector<Poll>& result, const char** message);
+     int polls_get(std::string const* creationDateTime, std::vector<Poll>& result, const char** message);
      int poll_get(std::string const& id, std::vector<Poll>& result, const char** message);
 
      int votes_get(std::string const& pollid, std::vector<Vote>& result, const char** message);

@@ -49,9 +49,32 @@ include CMakeFiles/GetPoll.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GetPoll.dir/flags.make
 
+CMakeFiles/GetPoll.dir/main.cpp.o: CMakeFiles/GetPoll.dir/flags.make
+CMakeFiles/GetPoll.dir/main.cpp.o: ../main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/main.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp
+
+CMakeFiles/GetPoll.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GetPoll.dir/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp > CMakeFiles/GetPoll.dir/main.cpp.i
+
+CMakeFiles/GetPoll.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GetPoll.dir/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp -o CMakeFiles/GetPoll.dir/main.cpp.s
+
+CMakeFiles/GetPoll.dir/main.cpp.o.requires:
+.PHONY : CMakeFiles/GetPoll.dir/main.cpp.o.requires
+
+CMakeFiles/GetPoll.dir/main.cpp.o.provides: CMakeFiles/GetPoll.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/GetPoll.dir/main.cpp.o.provides
+
+CMakeFiles/GetPoll.dir/main.cpp.o.provides.build: CMakeFiles/GetPoll.dir/main.cpp.o
+
 CMakeFiles/GetPoll.dir/Model/Poll.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Model/Poll.cpp.o: ../Model/Poll.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Model/Poll.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Model/Poll.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Poll.cpp
 
@@ -74,7 +97,7 @@ CMakeFiles/GetPoll.dir/Model/Poll.cpp.o.provides.build: CMakeFiles/GetPoll.dir/M
 
 CMakeFiles/GetPoll.dir/Model/Vote.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Model/Vote.cpp.o: ../Model/Vote.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Model/Vote.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Model/Vote.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Vote.cpp
 
@@ -97,7 +120,7 @@ CMakeFiles/GetPoll.dir/Model/Vote.cpp.o.provides.build: CMakeFiles/GetPoll.dir/M
 
 CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o: ../Model/PollOption.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Model/PollOption.cpp
 
@@ -120,7 +143,7 @@ CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o.provides.build: CMakeFiles/GetPoll
 
 CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: ../Storage/StorageClient.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.cpp
 
@@ -143,7 +166,7 @@ CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o.provides.build: CMakeFiles/Ge
 
 CMakeFiles/GetPoll.dir/Storage/Query.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Storage/Query.cpp.o: ../Storage/Query.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Storage/Query.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Storage/Query.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.cpp
 
@@ -166,7 +189,7 @@ CMakeFiles/GetPoll.dir/Storage/Query.cpp.o.provides.build: CMakeFiles/GetPoll.di
 
 CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o: CMakeFiles/GetPoll.dir/flags.make
 CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o: ../Network/RequestHandler.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Network/RequestHandler.cpp
 
@@ -187,40 +210,69 @@ CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o.provides: CMakeFiles/GetPoll
 
 CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o.provides.build: CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o
 
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: CMakeFiles/GetPoll.dir/flags.make
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Network/WebService.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GetPoll.dir/Network/WebService.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GetPoll.dir/Network/WebService.cpp.o -c /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.cpp
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GetPoll.dir/Network/WebService.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.cpp > CMakeFiles/GetPoll.dir/Network/WebService.cpp.i
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GetPoll.dir/Network/WebService.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.cpp -o CMakeFiles/GetPoll.dir/Network/WebService.cpp.s
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.requires:
+.PHONY : CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.requires
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.provides: CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.provides.build
+.PHONY : CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.provides
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.provides.build: CMakeFiles/GetPoll.dir/Network/WebService.cpp.o
+
 # Object files for target GetPoll
 GetPoll_OBJECTS = \
+"CMakeFiles/GetPoll.dir/main.cpp.o" \
 "CMakeFiles/GetPoll.dir/Model/Poll.cpp.o" \
 "CMakeFiles/GetPoll.dir/Model/Vote.cpp.o" \
 "CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o" \
 "CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o" \
 "CMakeFiles/GetPoll.dir/Storage/Query.cpp.o" \
-"CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o"
+"CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o" \
+"CMakeFiles/GetPoll.dir/Network/WebService.cpp.o"
 
 # External object files for target GetPoll
 GetPoll_EXTERNAL_OBJECTS =
 
-libGetPoll.so: CMakeFiles/GetPoll.dir/Model/Poll.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/Model/Vote.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/Storage/Query.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o
-libGetPoll.so: CMakeFiles/GetPoll.dir/build.make
-libGetPoll.so: ../CassandraDriver/libcassandra_static.a
-libGetPoll.so: CMakeFiles/GetPoll.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library libGetPoll.so"
+GetPoll: CMakeFiles/GetPoll.dir/main.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Model/Poll.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Model/Vote.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Storage/Query.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/Network/WebService.cpp.o
+GetPoll: CMakeFiles/GetPoll.dir/build.make
+GetPoll: ../CassandraDriver/libcassandra_static.a
+GetPoll: CMakeFiles/GetPoll.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable GetPoll"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GetPoll.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/GetPoll.dir/build: libGetPoll.so
+CMakeFiles/GetPoll.dir/build: GetPoll
 .PHONY : CMakeFiles/GetPoll.dir/build
 
+CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/main.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Model/Poll.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Model/Vote.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Storage/Query.cpp.o.requires
 CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o.requires
+CMakeFiles/GetPoll.dir/requires: CMakeFiles/GetPoll.dir/Network/WebService.cpp.o.requires
 .PHONY : CMakeFiles/GetPoll.dir/requires
 
 CMakeFiles/GetPoll.dir/clean:

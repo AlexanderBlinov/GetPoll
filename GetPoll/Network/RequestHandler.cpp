@@ -5,6 +5,9 @@
 
 #include <sstream>
 
+#include "WebService.h"
+
+
 class RequestHandler : virtual public fastcgi::Component, virtual public fastcgi::Handler {
 
 public:
@@ -20,9 +23,8 @@ public:
         virtual void onUnload() {
         }
         virtual void handleRequest(fastcgi::Request *request, fastcgi::HandlerContext *context) {
-            request->setContentType("text/plain");
-            std::stringbuf buffer(request->getURI());
-            request->write(&buffer);
+            WebService* service = new WebService();
+            service->web_service_process_request(request);
         }
 };
 

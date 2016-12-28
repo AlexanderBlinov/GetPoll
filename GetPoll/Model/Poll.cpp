@@ -4,6 +4,7 @@
 
 #include "Poll.h"
 
+
 std::string const &Poll::getId() const {
     return id;
 }

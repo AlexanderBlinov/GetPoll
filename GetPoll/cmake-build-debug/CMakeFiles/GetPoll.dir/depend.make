@@ -12,6 +12,16 @@ CMakeFiles/GetPoll.dir/Model/Vote.cpp.o: ../Model/Vote.cpp
 CMakeFiles/GetPoll.dir/Model/Vote.cpp.o: ../Model/Vote.h
 
 CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o: ../Network/RequestHandler.cpp
+CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o: ../Network/WebService.h
+
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../CassandraDriver/cassandra.h
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../JSON/json.hpp
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Model/Poll.h
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Model/PollOption.h
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Model/Vote.h
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Network/WebService.cpp
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Network/WebService.h
+CMakeFiles/GetPoll.dir/Network/WebService.cpp.o: ../Storage/StorageClient.h
 
 CMakeFiles/GetPoll.dir/Storage/Query.cpp.o: ../Model/Poll.h
 CMakeFiles/GetPoll.dir/Storage/Query.cpp.o: ../Model/PollOption.h
@@ -26,4 +36,7 @@ CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: ../Model/Vote.h
 CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: ../Storage/Query.h
 CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: ../Storage/StorageClient.cpp
 CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o: ../Storage/StorageClient.h
+
+CMakeFiles/GetPoll.dir/main.cpp.o: ../Network/WebService.h
+CMakeFiles/GetPoll.dir/main.cpp.o: ../main.cpp
 

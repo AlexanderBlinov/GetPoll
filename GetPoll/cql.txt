@@ -1,3 +1,5 @@
+DROP KEYSPACE IF EXISTS getpoll;
+
 CREATE KEYSPACE GetPoll WITH REPLICATION = {
 'class' : 'SimpleStrategy',
 'replication_factor' : 3
@@ -10,7 +12,7 @@ id timeuuid,
 name text,
 author text,
 description text,
-creationDateTime text,
+creationDateTime timestamp,
 options list<frozen <getpoll.option>>,
 primary key (id, creationDateTime)
 ) WITH CLUSTERING ORDER BY (creationDateTime DESC);

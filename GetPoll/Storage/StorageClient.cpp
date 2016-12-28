@@ -8,6 +8,7 @@
 int const QUERY_SUCCESS = 0;
 int const QUERY_FAILURE = 1;
 
+
 StorageClient::StorageClient(const char* hosts) {
     this->hosts = hosts;
 }
@@ -15,7 +16,6 @@ StorageClient::StorageClient(const char* hosts) {
 StorageClient::~StorageClient() {
     cass_cluster_free(this->cluster);
     cass_session_free(this->session);
-    delete[] this->hosts;
 }
 
 CassFuture *StorageClient::connect(const char** message) {
@@ -61,7 +61,8 @@ int StorageClient::perform_query(std::string& query, const CassResult** result, 
             *result = cass_future_get_result(result_future);
             statusCode = QUERY_SUCCESS;
         } else {
-            cass_future_error_message(result_future, message, NULL);
+            size_t messageLength;
+            cass_future_error_message(result_future, message, &messageLength);
         }
 
         cass_future_free(result_future);
@@ -97,7 +98,8 @@ int StorageClient::perform_batch_query(std::vector<std::string>& queries, const 
         if (cass_future_error_code(batch_future) == CASS_OK) {
             statusCode = QUERY_SUCCESS;
         } else {
-            cass_future_error_message(batch_future, message, NULL);
+            size_t messageLength;
+            cass_future_error_message(batch_future, message, &messageLength);
         }
 
         cass_future_free(batch_future);
@@ -111,43 +113,46 @@ int StorageClient::perform_batch_query(std::vector<std::string>& queries, const 
     return statusCode;
 }
 
-int StorageClient::polls_get(std::string const& creationDateTime, std::vector<Poll>& result, const char** message) {
+int StorageClient::polls_get(std::string const* creationDateTime, std::vector<Poll>& result, const char** message) {
     const CassResult* query_result = NULL;
 
     int limit = 10;
-    std::string query = select_polls_query(limit, &creationDateTime);
+    std::string query = select_polls_query(limit, creationDateTime);
     int statusCode = this->perform_query(query, &query_result, message);
     if (statusCode != QUERY_SUCCESS) {
         return  statusCode;
     }
 
-    CassIterator* iter = cass_iterator_from_result(query_result);
-    while (cass_iterator_next(iter)) {
-        const CassRow* row = cass_iterator_get_row(iter);
-        const CassValue* value = cass_row_get_column_by_name(row, "id");
+    if (cass_result_row_count(query_result) > 0) {
+        CassIterator *iter = cass_iterator_from_result(query_result);
+        while (cass_iterator_next(iter)) {
+            const CassRow *row = cass_iterator_get_row(iter);
+            const CassValue *value = cass_row_get_column_by_name(row, "id");
 
-        const char* id;
-        size_t id_length;
-        cass_value_get_string(value, &id, &id_length);
+            const char *id;
+            size_t id_length;
+            cass_value_get_string(value, &id, &id_length);
 
-        const char* creationDT;
-        size_t creationDateTime_length;
-        value = cass_row_get_column_by_name(row, "creationDateTime");
-        cass_value_get_string(value, &creationDT, &creationDateTime_length);
+            const char *creationDT;
+            size_t creationDateTime_length;
+            value = cass_row_get_column_by_name(row, "creationDateTime");
+            cass_value_get_string(value, &creationDT, &creationDateTime_length);
 
-        const char* name;
-        size_t name_length;
-        value = cass_row_get_column_by_name(row, "name");
-        cass_value_get_string(value, &name, &name_length);
+            const char *name;
+            size_t name_length;
+            value = cass_row_get_column_by_name(row, "name");
+            cass_value_get_string(value, &name, &name_length);
 
-        Poll poll(std::string(id, id_length));
-        poll.creationDateTime = std::string(creationDT, creationDateTime_length);
-        poll.name = std::string(name, name_length);
+            Poll poll(std::string(id, id_length));
+            poll.creationDateTime = std::string(creationDT, creationDateTime_length);
+            poll.name = std::string(name, name_length);
 
-        result.push_back(poll);
+            result.push_back(poll);
+        }
+
+        cass_iterator_free(iter);
     }
 
-    cass_iterator_free(iter);
     cass_result_free(query_result);
 
     return statusCode;
@@ -254,7 +259,7 @@ int StorageClient::poll_get(std::string const& id, std::vector<Poll>& result, co
             const CassValue* val = cass_row_get_column_by_name(optrow, "id");
             int optionid;
             cass_value_get_int32(val, &optionid);
-            for (std::vector<PollOption>::iterator it = poll.options.begin(); it != poll.options.end(); ++it) {
+            for (auto it = poll.options.begin(); it != poll.options.end(); ++it) {
                 if (it->id == optionid) {
                     val = cass_row_get_column_by_name(row, "votes");
                     int votes;

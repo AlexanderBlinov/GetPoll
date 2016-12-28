@@ -210,6 +210,30 @@ Network/RequestHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.s
 .PHONY : Network/RequestHandler.cpp.s
 
+Network/WebService.o: Network/WebService.cpp.o
+.PHONY : Network/WebService.o
+
+# target to build an object file
+Network/WebService.cpp.o:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Network/WebService.cpp.o
+.PHONY : Network/WebService.cpp.o
+
+Network/WebService.i: Network/WebService.cpp.i
+.PHONY : Network/WebService.i
+
+# target to preprocess a source file
+Network/WebService.cpp.i:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Network/WebService.cpp.i
+.PHONY : Network/WebService.cpp.i
+
+Network/WebService.s: Network/WebService.cpp.s
+.PHONY : Network/WebService.s
+
+# target to generate assembly for a file
+Network/WebService.cpp.s:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Network/WebService.cpp.s
+.PHONY : Network/WebService.cpp.s
+
 Storage/Query.o: Storage/Query.cpp.o
 .PHONY : Storage/Query.o
 
@@ -258,6 +282,30 @@ Storage/StorageClient.cpp.s:
 	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.s
 .PHONY : Storage/StorageClient.cpp.s
 
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/GetPoll.dir/build.make CMakeFiles/GetPoll.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -279,12 +327,18 @@ help:
 	@echo "... Network/RequestHandler.o"
 	@echo "... Network/RequestHandler.i"
 	@echo "... Network/RequestHandler.s"
+	@echo "... Network/WebService.o"
+	@echo "... Network/WebService.i"
+	@echo "... Network/WebService.s"
 	@echo "... Storage/Query.o"
 	@echo "... Storage/Query.i"
 	@echo "... Storage/Query.s"
 	@echo "... Storage/StorageClient.o"
 	@echo "... Storage/StorageClient.i"
 	@echo "... Storage/StorageClient.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

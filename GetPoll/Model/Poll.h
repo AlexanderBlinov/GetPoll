@@ -15,7 +15,6 @@ class Poll {
 
 public:
     std::string author, description, name, creationDateTime;
-    std::vector<std::string> links;
     std::vector<PollOption> options;
     int totalVotes;
 

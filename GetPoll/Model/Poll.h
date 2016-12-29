@@ -11,6 +11,7 @@
 #include "PollOption.h"
 
 class Poll {
+private:
     std::string id;
 
 public:
@@ -21,6 +22,8 @@ public:
     Poll(std::string id) : id(id), totalVotes(0) {};
 
     std::string const& getId() const;
+
+    bool operator>(Poll const& poll) const;
 };
 
 #endif //GETPOLL_POLL_H

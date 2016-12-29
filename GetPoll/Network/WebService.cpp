@@ -5,6 +5,8 @@
 #include <string>
 #include <sstream>
 
+#include <boost/algorithm/string/replace.hpp>
+
 #include "WebService.h"
 
 #include "../JSON/json.hpp"
@@ -57,6 +59,24 @@ std::string generateUUID() {
     return std::string(uuid_str);
 }
 
+
+
+std::string encodedDate(std::string const& date) {
+    std::string eDate(date);
+    boost::algorithm::replace_all(eDate, ":", "%3A");
+    boost::algorithm::replace_all(eDate, "+", "%2B");
+
+    return eDate;
+}
+
+std::string decodedDate(std::string const& eDate) {
+    std::string date(eDate);
+    boost::algorithm::replace_all(date, "%3A", ":");
+    boost::algorithm::replace_all(date, "%2B", "+");
+
+    return date;
+}
+
 boost::thread_specific_ptr<StorageClient> WebService::storageClient;
 
 StorageClient& WebService::getStorageClient() {
@@ -87,7 +107,7 @@ void WebService::web_service_process_request(fastcgi::Request* request) {
             }
         } else if (token.find("polls?") != std::string::npos) {
             if (request->hasArg("creationDateTime") || request->countArgs() == 1) {
-                std::string creationDateTime = request->getArg("creationDateTime");
+                std::string creationDateTime = decodedDate(request->getArg("creationDateTime"));
                 web_service_get_polls(request, &creationDateTime);
             } else {
                 request->setStatus(HTTP_STATUS_NOT_FOUND);
@@ -172,7 +192,7 @@ void WebService::web_service_get_polls(fastcgi::Request* request, std::string co
 
     json linksJson = { { "self", "/polls" } };
     if (nextCreationDateTime) {
-        linksJson.push_back({ "next", "/polls?creationDateTime=" + *nextCreationDateTime });
+        linksJson.push_back({ "next", "/polls?creationDateTime=" + encodedDate(*nextCreationDateTime) });
     }
 
     json json = { { "data", dataJson }, { "links", linksJson} };
@@ -217,7 +237,6 @@ void WebService::web_service_get_poll(fastcgi::Request* request, std::string con
                   { "options", optionsJson },
                   { "totalVotes", poll.totalVotes } };
 
-    printf("%s", json.dump().c_str());
     std::stringbuf buf(json.dump());
     request->write(&buf);
     request->setStatus(HTTP_STATUS_SUCCESS);
@@ -244,6 +263,9 @@ void WebService::web_service_post_poll(fastcgi::Request* request) {
     }
 
     Poll poll(generateUUID());
+    poll.name = "name";
+    poll.author = "author";
+    poll.description = "description";
     poll.name = json["name"];
     poll.description = json["description"];
     poll.author = json["author"];
@@ -257,9 +279,14 @@ void WebService::web_service_post_poll(fastcgi::Request* request) {
         }
         PollOption option;
         option.id = it.value()["id"];
-        option.id = it.value()["name"];
+        option.name = it.value()["name"];
         options.push_back(option);
     }
+    PollOption option;
+    option.id = 1;
+    option.name = "opt_name";
+    options.push_back(option);
+
     poll.options = options;
 
     const char* message = nullptr;
@@ -323,7 +350,7 @@ void WebService::web_service_get_vote(fastcgi::Request* request, std::string con
     const char *message = nullptr;
     std::vector<Vote> votes;
 
-    if (getStorageClient().vote_get(id, votes, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_get(id, pollid, votes, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -369,6 +396,8 @@ void WebService::web_service_post_vote(fastcgi::Request* request, std::string co
     Vote vote(generateUUID());
     vote.author = json["author"];
     vote.optionId = json["optionId"];
+    vote.author = "author";
+    vote.optionId = 1;
 
     const char* message = nullptr;
     if (getStorageClient().vote_new(id, vote, &message) == QUERY_FAILURE) {
@@ -401,10 +430,11 @@ void WebService::web_service_put_vote(fastcgi::Request* request, std::string con
         return;
     }
 
-
     Vote vote(id);
     vote.author = json["author"];
     vote.optionId = json["optionId"];
+    vote.author = "Jane Doe";
+    vote.optionId = 1;
 
     const char* message = nullptr;
     if (getStorageClient().vote_update(pollid, vote, &message) == QUERY_FAILURE) {
@@ -422,7 +452,7 @@ void WebService::web_service_put_vote(fastcgi::Request* request, std::string con
 void WebService::web_service_delete_vote(fastcgi::Request* request, std::string const& id, std::string const& pollid) {
     const char* message = nullptr;
     std::vector<Vote> votes;
-    if (getStorageClient().vote_get(id, votes, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_get(id, pollid, votes, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);

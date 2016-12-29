@@ -11,7 +11,7 @@
 class StorageClient;
 
 class WebService {
-public:
+private:
     static boost::thread_specific_ptr<StorageClient> storageClient;
 
     StorageClient& getStorageClient();

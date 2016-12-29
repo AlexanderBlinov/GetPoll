@@ -20,7 +20,7 @@ CassStatement* select_poll_option_votes_query(std::string const& pollid);
 
 CassStatement* select_votes_query(std::string const& pollid);
 
-CassStatement* select_vote_query(std::string const& id);
+CassStatement* select_vote_query(std::string const& id, std::string const& pollid);
 
 CassStatement* insert_poll_query(Poll const& poll);
 
@@ -30,11 +30,11 @@ CassStatement* update_option_votes_query(std::string const& pollid, int optionid
 
 CassStatement* update_poll_votes_query(std::string const& pollid, long long count_delta);
 
-CassStatement* update_vote_query(Vote const& vote);
+CassStatement* update_vote_query(Vote const& vote, std::string const& pollid);
 
 CassStatement* delete_poll_query(std::string const& pollid);
 
-CassStatement* delete_vote_query(std::string const& voteid);
+CassStatement* delete_vote_query(std::string const& voteid, std::string const& pollid);
 
 CassStatement* delete_votes_query(std::string const& pollid);
 

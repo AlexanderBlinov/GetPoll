@@ -28,12 +28,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WebService.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WebService.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Network/WebService.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="202">
+              <caret line="175" column="19" lean-forward="false" selection-start-line="175" selection-start-column="19" selection-end-line="175" selection-end-column="19" />
+              <folding>
+                <element signature="e#41#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,10 +43,10 @@
       <file leaf-file-name="WebService.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Network/WebService.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
               <folding>
-                <element signature="e#100#129#0" expanded="true" />
+                <marker date="1483019573128" expanded="true" signature="202:1270" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,9 +55,12 @@
       <file leaf-file-name="Query.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Storage/Query.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="76">
+              <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+              <folding>
+                <element signature="e#41#59#0" expanded="true" />
+                <marker date="1483019471021" expanded="true" signature="471:1017" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +68,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding>
                 <element signature="e#41#60#0" expanded="true" />
               </folding>
@@ -72,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,20 +90,10 @@
       <file leaf-file-name="StorageClient.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Storage/StorageClient.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="64" column="36" lean-forward="true" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageClient.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Storage/StorageClient.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="-36">
+              <caret line="139" column="36" lean-forward="false" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="55" />
               <folding>
-                <marker date="1482968877582" expanded="true" signature="359:1572" ph="{...}" />
+                <element signature="e#41#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,10 +117,12 @@
       <find>cass_result_free</find>
       <find>connect</find>
       <find>this-&gt;</find>
-      <find>//</find>
       <find>HTTP_STATUS_NOT_FOUND</find>
       <find>storageClient</find>
       <find>-&gt;</find>
+      <find>//</find>
+      <find>printf</find>
+      <find>HTTP_STATUS_CREATE</find>
     </findStrings>
     <replaceStrings>
       <replace>QUERY_FAILURE</replace>
@@ -153,20 +150,20 @@
         <option value="$PROJECT_DIR$/Model/Vote.cpp" />
         <option value="$PROJECT_DIR$/cqli.txt" />
         <option value="$PROJECT_DIR$/Model/Vote.h" />
+        <option value="$PROJECT_DIR$/CassandraDriver/cassandra.h" />
+        <option value="$PROJECT_DIR$/Model/PollOption.h" />
+        <option value="$PROJECT_DIR$/Network/RequestHandler.cpp" />
         <option value="$PROJECT_DIR$/Model/Poll.cpp" />
         <option value="$PROJECT_DIR$/cql.txt" />
-        <option value="$PROJECT_DIR$/CassandraDriver/cassandra.h" />
         <option value="$PROJECT_DIR$/Model/Poll.h" />
-        <option value="$PROJECT_DIR$/Model/PollOption.h" />
-        <option value="$PROJECT_DIR$/Storage/Query.h" />
-        <option value="$PROJECT_DIR$/Storage/Query.cpp" />
-        <option value="$PROJECT_DIR$/Network/RequestHandler.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Storage/StorageClient.h" />
+        <option value="$PROJECT_DIR$/Storage/Query.h" />
         <option value="$PROJECT_DIR$/Storage/StorageClient.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Network/WebService.h" />
+        <option value="$PROJECT_DIR$/Storage/Query.cpp" />
         <option value="$PROJECT_DIR$/Network/WebService.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Network/WebService.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -470,12 +467,16 @@
       <workItem from="1482831795894" duration="43517000" />
       <workItem from="1482928743260" duration="6161000" />
       <workItem from="1482945355414" duration="4937000" />
-      <workItem from="1482956496221" duration="14069000" />
+      <workItem from="1482956496221" duration="15801000" />
+      <workItem from="1482999915494" duration="369000" />
+      <workItem from="1483003814574" duration="4038000" />
+      <workItem from="1483010530117" duration="2474000" />
+      <workItem from="1483013243961" duration="6371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121293000" />
+    <option name="totallyTimeSpent" value="136277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1215" height="776" extended-state="6" />
@@ -530,33 +531,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Storage/Query.cpp</url>
+          <line>157</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Network/WebService.cpp</url>
+          <line>175</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/Storage/StorageClient.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Storage/StorageClient.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/Poll.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -579,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,7 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,21 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Poll.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/4.9/bits/basic_string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="1147" column="0" lean-forward="false" selection-start-line="1147" selection-start-column="0" selection-end-line="1147" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -743,51 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cql.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/fastcgi/Fastcgi-Daemon/library/request.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3996">
-          <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CassandraDriver/cassandra.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="8062" column="16" lean-forward="true" selection-start-line="8062" selection-start-column="16" selection-end-line="8062" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/PollOption.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Poll.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Storage/Query.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,68 +730,209 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CassandraDriver/cassandra.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="9184" column="0" lean-forward="false" selection-start-line="9184" selection-start-column="0" selection-end-line="9184" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/time.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="132" column="7" lean-forward="false" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.9/chrono">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="555" column="23" lean-forward="false" selection-start-line="555" selection-start-column="23" selection-end-line="555" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Poll.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.9/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="545" column="0" lean-forward="false" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Poll.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/Query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="36" column="85" lean-forward="false" selection-start-line="36" selection-start-column="85" selection-end-line="36" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Storage/StorageClient.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <marker date="1482968877582" expanded="true" signature="359:1572" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="356">
+          <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file:///usr/include/c++/4.9/ext/atomicity.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cql.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Storage/StorageClient.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="64" column="36" lean-forward="true" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Storage/Query.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Network/WebService.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="-36">
+          <caret line="139" column="36" lean-forward="false" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="55" />
           <folding>
-            <element signature="e#100#129#0" expanded="true" />
+            <element signature="e#41#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Network/WebService.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state relative-caret-position="202">
+          <caret line="175" column="19" lean-forward="false" selection-start-line="175" selection-start-column="19" selection-end-line="175" selection-end-column="19" />
+          <folding>
+            <element signature="e#41#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network/WebService.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <marker date="1483019573128" expanded="true" signature="202:1270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/Query.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+            <marker date="1483019471021" expanded="true" signature="471:1017" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/fastcgi/Fastcgi-Daemon/library/request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding>
+            <marker date="1480798386637" expanded="false" signature="148:168" ph="..." />
+            <marker date="1480798386637" expanded="true" signature="195:5762" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="320:353" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="401:439" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="485:517" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="569:607" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="657:693" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="749:791" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="843:881" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="937:979" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1033:1073" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1125:1163" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1215:1253" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1306:1345" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1400:1441" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1492:1529" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1581:1622" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1675:1714" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="1752:1983" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2021:2142" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2184:2218" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2272:2307" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2375:2410" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2493:2524" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2584:2611" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2656:2693" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2750:2788" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2859:2897" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="2960:2990" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3034:3070" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3127:3165" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3236:3274" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3337:3367" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3422:3458" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3521:3551" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3627:3670" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3746:3789" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3853:3892" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="3925:3958" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4000:4036" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4084:4117" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4166:4199" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4248:4281" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4358:4396" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4439:4465" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4537:4576" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4643:4684" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4708:4731" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4761:4790" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4851:4886" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4922:4958" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="4992:5025" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5064:5095" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5136:5165" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5211:5244" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5275:5320" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5376:5432" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5488:5528" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5592:5640" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5681:5712" ph="{...}" />
+            <marker date="1480798386637" expanded="true" signature="5736:5759" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

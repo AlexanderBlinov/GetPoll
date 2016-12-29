@@ -111,6 +111,8 @@ string
 -
 sstream
 -
+boost/algorithm/string/replace.hpp
+-
 WebService.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.h
 ../JSON/json.hpp
@@ -133,6 +135,12 @@ sstream
 -
 functional
 -
+chrono
+-
+string.h
+-
+time.h
+-
 ../Model/Poll.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Poll.h
 ../Model/Vote.h
@@ -145,6 +153,10 @@ Query.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/cassandra.h
 
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.cpp
+chrono
+-
+algorithm
+-
 StorageClient.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.h
 Query.h

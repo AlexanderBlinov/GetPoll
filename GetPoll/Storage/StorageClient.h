@@ -38,7 +38,7 @@ class StorageClient {
      int poll_get(std::string const& id, std::vector<Poll>& result, const char** message);
 
      int votes_get(std::string const& pollid, std::vector<Vote>& result, const char** message);
-     int vote_get(std::string const& id, std::vector<Vote>& result, const char** message);
+     int vote_get(std::string const& id, std::string const& pollid, std::vector<Vote>& result, const char** message);
 
      int poll_new(Poll const& poll, const char** message);
      int vote_new(std::string const& pollid, Vote const& vote, const char** message);

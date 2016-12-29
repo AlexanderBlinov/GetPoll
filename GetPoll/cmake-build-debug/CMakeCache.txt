@@ -175,7 +175,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 GetPoll_BINARY_DIR:STATIC=/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug
 
 //Dependencies for the target
-GetPoll_LIB_DEPENDS:STATIC=general;/home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/libcassandra_static.a;general;uv;general;pthread;general;fastcgi-daemon2;
+GetPoll_LIB_DEPENDS:STATIC=general;/home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/libcassandra_static.a;general;uv;general;pthread;general;boost_thread;general;fastcgi-daemon2;
 
 //Value Computed by CMake
 GetPoll_SOURCE_DIR:STATIC=/home/ubuntu/Desktop/GetPoll/GetPoll

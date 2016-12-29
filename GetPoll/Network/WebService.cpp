@@ -263,9 +263,6 @@ void WebService::web_service_post_poll(fastcgi::Request* request) {
     }
 
     Poll poll(generateUUID());
-    poll.name = "name";
-    poll.author = "author";
-    poll.description = "description";
     poll.name = json["name"];
     poll.description = json["description"];
     poll.author = json["author"];
@@ -282,11 +279,6 @@ void WebService::web_service_post_poll(fastcgi::Request* request) {
         option.name = it.value()["name"];
         options.push_back(option);
     }
-    PollOption option;
-    option.id = 1;
-    option.name = "opt_name";
-    options.push_back(option);
-
     poll.options = options;
 
     const char* message = nullptr;
@@ -396,8 +388,6 @@ void WebService::web_service_post_vote(fastcgi::Request* request, std::string co
     Vote vote(generateUUID());
     vote.author = json["author"];
     vote.optionId = json["optionId"];
-    vote.author = "author";
-    vote.optionId = 1;
 
     const char* message = nullptr;
     if (getStorageClient().vote_new(id, vote, &message) == QUERY_FAILURE) {
@@ -433,8 +423,6 @@ void WebService::web_service_put_vote(fastcgi::Request* request, std::string con
     Vote vote(id);
     vote.author = json["author"];
     vote.optionId = json["optionId"];
-    vote.author = "Jane Doe";
-    vote.optionId = 1;
 
     const char* message = nullptr;
     if (getStorageClient().vote_update(pollid, vote, &message) == QUERY_FAILURE) {

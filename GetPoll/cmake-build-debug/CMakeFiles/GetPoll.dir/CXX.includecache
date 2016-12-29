@@ -176,3 +176,11 @@ vector
 ../CassandraDriver/cassandra.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/cassandra.h
 
+/home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp
+iostream
+-
+Network/WebService.h
+/home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.h
+Storage/StorageClient.h
+/home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.h
+

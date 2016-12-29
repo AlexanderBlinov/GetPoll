@@ -38,3 +38,11 @@ CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o
  /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.h
  /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.cpp
  /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.h
+CMakeFiles/GetPoll.dir/main.cpp.o
+ /home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/cassandra.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Poll.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/Model/PollOption.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Vote.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.h
+ /home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp

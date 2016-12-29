@@ -1,0 +1,188 @@
+"2016-12-29 20:58:36.244 +0300" : {
+  "main_scheduler" : {
+    "bqs" : {
+      "15283" : {
+        "mmconts" : [0, 497, 503],
+        "acts" : [506, 495],
+        "tstate" : { "idle" : 1009009, "run" : 12972, "locked" : 189, "mmap" : 2 }
+      },
+      "15284" : {
+        "mmconts" : [0, 496, 502],
+        "acts" : [20, 19],
+        "tstate" : { "idle" : 996823, "run" : 22102, "locked" : 47, "mmap" : 2926 }
+      }
+    }
+  },
+  "benchmark_io" : {
+    "simple_times" : {
+      "mcount" : {
+        "mcount" : { "104 -- 167" : 1, "6 -- 10" : 2, "4 -- 6" : 2, "2 -- 4" : 1 }
+      }
+    },
+    "stream_method" : {
+      "conns" : [6, 5],
+      "in" : [8922, 8726],
+      "out" : [138, 134],
+      "mmtasks" : [0, 0, 1],
+      "load" : 0.010,
+      "mcount" : {
+        "mcount" : { "Success" : 6 }
+      },
+      "http_proto0" : {
+        "mcount" : {
+          "mcount" : { "OK" : 6 }
+        }
+      },
+      "source_log" : {
+        "delta" : [0, 0, 1240]
+      },
+      "loggers" : {
+        "brief_logger" : {
+          "records" : [6, 5],
+          "out" : [350, 342]
+        }
+      }
+    }
+  }
+},
+"2016-12-29 20:58:37.245 +0300" : {
+  "main_scheduler" : {
+    "bqs" : {
+      "15283" : {
+        "mmconts" : [503, 503, 503],
+        "acts" : [3, 2],
+        "tstate" : { "idle" : 1000068, "run" : 1092, "locked" : 0, "mmap" : 0 }
+      },
+      "15284" : {
+        "mmconts" : [502, 502, 502],
+        "acts" : [46, 45],
+        "tstate" : { "idle" : 995309, "run" : 5852, "locked" : 0, "mmap" : 0 }
+      }
+    }
+  },
+  "benchmark_io" : {
+    "simple_times" : {
+      "mcount" : {
+        "mcount" : { "6 -- 10" : 3, "4 -- 6" : 8, "2 -- 4" : 4 }
+      }
+    },
+    "stream_method" : {
+      "conns" : [15, 14],
+      "in" : [22305, 22279],
+      "out" : [345, 344],
+      "mmtasks" : [0, 0, 1],
+      "load" : 0.040,
+      "mcount" : {
+        "mcount" : { "Success" : 15 }
+      },
+      "http_proto0" : {
+        "mcount" : {
+          "mcount" : { "OK" : 15 }
+        }
+      },
+      "source_log" : {
+        "delta" : [0, 0, 0]
+      },
+      "loggers" : {
+        "brief_logger" : {
+          "records" : [15, 14],
+          "out" : [859, 858]
+        }
+      }
+    }
+  }
+},
+"2016-12-29 20:58:38.248 +0300" : {
+  "main_scheduler" : {
+    "bqs" : {
+      "15283" : {
+        "mmconts" : [503, 503, 503],
+        "acts" : [3, 2],
+        "tstate" : { "idle" : 1001170, "run" : 1087, "locked" : 0, "mmap" : 0 }
+      },
+      "15284" : {
+        "mmconts" : [502, 502, 502],
+        "acts" : [75, 74],
+        "tstate" : { "idle" : 993106, "run" : 9150, "locked" : 0, "mmap" : 0 }
+      }
+    }
+  },
+  "benchmark_io" : {
+    "simple_times" : {
+      "mcount" : {
+        "mcount" : { "10 -- 16" : 4, "6 -- 10" : 7, "4 -- 6" : 9, "2 -- 4" : 4 }
+      }
+    },
+    "stream_method" : {
+      "conns" : [24, 23],
+      "in" : [35688, 35607],
+      "out" : [552, 550],
+      "mmtasks" : [0, 0, 1],
+      "load" : 0.038,
+      "mcount" : {
+        "mcount" : { "Success" : 24 }
+      },
+      "http_proto0" : {
+        "mcount" : {
+          "mcount" : { "OK" : 24 }
+        }
+      },
+      "source_log" : {
+        "delta" : [0, 0, 0]
+      },
+      "loggers" : {
+        "brief_logger" : {
+          "records" : [24, 23],
+          "out" : [1396, 1392]
+        }
+      }
+    }
+  }
+},
+"2016-12-29 20:58:38.622 +0300" : {
+  "main_scheduler" : {
+    "bqs" : {
+      "15283" : {
+        "mmconts" : [503, 503, 503],
+        "acts" : [0, 0],
+        "tstate" : { "idle" : 373649, "run" : 545, "locked" : 0, "mmap" : 0 }
+      },
+      "15284" : {
+        "mmconts" : [502, 502, 502],
+        "acts" : [36, 96],
+        "tstate" : { "idle" : 369322, "run" : 4872, "locked" : 0, "mmap" : 0 }
+      }
+    }
+  },
+  "benchmark_io" : {
+    "simple_times" : {
+      "mcount" : {
+        "mcount" : { "16 -- 25" : 1, "10 -- 16" : 3, "4 -- 6" : 5, "2 -- 4" : 3 }
+      }
+    },
+    "stream_method" : {
+      "conns" : [12, 32],
+      "in" : [17844, 47686],
+      "out" : [276, 737],
+      "mmtasks" : [0, 0, 1],
+      "load" : 0.037,
+      "mcount" : {
+        "mcount" : { "Success" : 12 }
+      },
+      "http_proto0" : {
+        "mcount" : {
+          "mcount" : { "OK" : 12 }
+        }
+      },
+      "source_log" : {
+        "delta" : [0, 0, 0]
+      },
+      "loggers" : {
+        "brief_logger" : {
+          "records" : [12, 32],
+          "out" : [706, 1886]
+        }
+      }
+    }
+  }
+}

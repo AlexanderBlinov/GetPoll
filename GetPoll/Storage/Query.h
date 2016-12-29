@@ -5,44 +5,37 @@
 #ifndef GETPOLL_QUERY_H
 #define GETPOLL_QUERY_H
 
-#include "../Model/Poll.h"
-#include "../Model/Vote.h"
+#include "../CassandraDriver/cassandra.h"
 
-const char* select_polls_query(int limit, const char* creationDateTime);
+class Poll;
+class Vote;
 
-const char* select_poll_query(const char* pollid);
+CassStatement* select_polls_query(int limit, std::string const* creationDateTime);
 
-const char* select_poll_votes_query(const char* pollid);
+CassStatement* select_poll_query(std::string const& pollid);
 
-const char* select_poll_option_votes_query(const char* pollid);
+CassStatement* select_poll_votes_query(std::string const& pollid);
 
-const char* select_votes_query(const char* pollid);
+CassStatement* select_poll_option_votes_query(std::string const& pollid);
 
-const char* select_vote_query(const char* id);
+CassStatement* select_votes_query(std::string const& pollid);
 
-const char* insert_poll_query(Poll const& poll);
+CassStatement* select_vote_query(std::string const& id, std::string const& pollid);
 
-const char* insert_vote_query(const char* pollid, Vote const& vote);
+CassStatement* insert_poll_query(Poll const& poll);
 
-const char* insert_option_votes_query(const char* pollid, int optionid);
+CassStatement* insert_vote_query(std::string const& pollid, Vote const& vote);
 
-const char* insert_poll_votes_query(const char* pollid);
+CassStatement* update_option_votes_query(std::string const& pollid, int optionid, long long count_delta);
 
-const char* update_option_votes_query(const char* pollid, int optionid, int count_delta);
+CassStatement* update_poll_votes_query(std::string const& pollid, long long count_delta);
 
-const char* update_poll_votes_query(const char* pollid, int count_delta);
+CassStatement* update_vote_query(Vote const& vote, std::string const& pollid);
 
-const char* update_vote_query(Vote const& vote);
+CassStatement* delete_poll_query(std::string const& pollid);
 
-const char* delete_poll_query(const char* pollid);
+CassStatement* delete_vote_query(std::string const& voteid, std::string const& pollid);
 
-const char* delete_vote_query(const char* voteid);
-
-const char* delete_votes_query(const char* pollid);
-
-const char* delete_poll_votes_query(const char* pollid);
-
-const char* delete_option_votes_query(const char* pollid);
-
+CassStatement* delete_votes_query(std::string const& pollid);
 
 #endif //GETPOLL_QUERY_H

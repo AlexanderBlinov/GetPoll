@@ -1,0 +1,47 @@
+"2016-12-29 20:51:16.318 +0300" : {
+  "main_scheduler" : {
+    "bqs" : {
+      "14299" : {
+        "mmconts" : [0, 225, 497],
+        "acts" : [502, 17469],
+        "tstate" : { "idle" : 1923, "run" : 18191, "locked" : 0, "mmap" : 8622 }
+      },
+      "14300" : {
+        "mmconts" : [0, 2, 4],
+        "acts" : [4, 139],
+        "tstate" : { "idle" : 719, "run" : 27016, "locked" : 0, "mmap" : 972 }
+      }
+    }
+  },
+  "benchmark_io" : {
+    "simple_times" : {
+      "mcount" : {
+        "mcount" : { "25 -- 41" : 1 }
+      }
+    },
+    "stream_method" : {
+      "conns" : [1, 34],
+      "in" : [145, 5023],
+      "out" : [28, 970],
+      "mmtasks" : [0, 0, 1],
+      "load" : 0.328,
+      "mcount" : {
+        "mcount" : { "Success" : 1 }
+      },
+      "http_proto0" : {
+        "mcount" : {
+          "mcount" : { "OK" : 1 }
+        }
+      },
+      "source_log" : {
+        "delta" : [0, 968, 520]
+      },
+      "loggers" : {
+        "brief_logger" : {
+          "records" : [1, 34],
+          "out" : [61, 2108]
+        }
+      }
+    }
+  }
+}

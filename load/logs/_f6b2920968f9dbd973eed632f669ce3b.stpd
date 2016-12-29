@@ -1,0 +1,4 @@
+23 0 #0
+GET /polls HTTP/1.0
+
+

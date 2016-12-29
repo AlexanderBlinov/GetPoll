@@ -1,0 +1,83 @@
+2016-12-29 20:25:03,821 [INFO] agent:314 Init
+2016-12-29 20:25:03,822 [INFO] agent:319 Trying to make telegraf executable: /usr/bin/telegraf
+2016-12-29 20:25:03,822 [INFO] agent:329 Trying to make customs script executable: /tmp/tmpu9GChb/agent_customs.sh
+2016-12-29 20:25:03,824 [INFO] agent:191 Successfully loaded startup config.
+Startups: []
+Shutdowns: []
+
+2016-12-29 20:25:03,825 [INFO] agent:340 Starting AgentWorker: <AgentWorker(Thread-1, initial daemon)>
+2016-12-29 20:25:03,826 [DEBUG] agent:344 Check for any stdin command for shutdown
+2016-12-29 20:25:03,827 [INFO] agent:199 Running startup commands
+2016-12-29 20:25:03,827 [INFO] agent:205 Starting metrics collector..
+2016-12-29 20:25:03,835 [INFO] agent:215 Waiting for telegraf...
+2016-12-29 20:25:04,837 [INFO] agent:215 Waiting for telegraf...
+2016-12-29 20:25:05,838 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:03 I! Starting Telegraf (version 1.1.1)
+
+2016-12-29 20:25:05,838 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:03 I! Loaded outputs: file
+
+2016-12-29 20:25:05,838 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:03 I! Loaded inputs: inputs.kernel inputs.system inputs.mem inputs.net inputs.diskio inputs.cpu
+
+2016-12-29 20:25:05,838 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:03 I! Tags enabled: host=ubuntu-VirtualBox
+
+2016-12-29 20:25:05,838 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:03 I! Agent Config: Interval:1s, Quiet:false, Hostname:"ubuntu-VirtualBox", Flush Interval:1s 
+
+2016-12-29 20:25:06,840 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:06 I! Output [file] buffer fullness: 17 / 10000 metrics. Total gathered metrics: 17. Total dropped metrics: 0.
+
+2016-12-29 20:25:06,840 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:06 I! Output [file] wrote batch of 17 metrics in 631.141µs
+
+2016-12-29 20:25:06,840 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:06 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 26. Total dropped metrics: 0.
+
+2016-12-29 20:25:06,840 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:06 I! Output [file] wrote batch of 9 metrics in 382.299µs
+
+2016-12-29 20:25:07,841 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:07 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 35. Total dropped metrics: 0.
+
+2016-12-29 20:25:07,841 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:07 I! Output [file] wrote batch of 9 metrics in 385.988µs
+
+2016-12-29 20:25:08,841 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:08 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 44. Total dropped metrics: 0.
+
+2016-12-29 20:25:08,842 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:08 I! Output [file] wrote batch of 9 metrics in 357.268µs
+
+2016-12-29 20:25:09,842 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:09 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 53. Total dropped metrics: 0.
+
+2016-12-29 20:25:09,843 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:09 I! Output [file] wrote batch of 9 metrics in 297.813µs
+
+2016-12-29 20:25:10,844 [DEBUG] agent:245 send 1174 bytes of data to collector
+2016-12-29 20:25:11,845 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:11 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 62. Total dropped metrics: 0.
+
+2016-12-29 20:25:11,845 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:11 I! Output [file] wrote batch of 9 metrics in 553.307µs
+
+2016-12-29 20:25:12,846 [DEBUG] agent:245 send 1511 bytes of data to collector
+2016-12-29 20:25:12,847 [DEBUG] agent:245 send 1511 bytes of data to collector
+2016-12-29 20:25:12,847 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:11 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 71. Total dropped metrics: 0.
+
+2016-12-29 20:25:12,847 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:11 I! Output [file] wrote batch of 9 metrics in 321.032µs
+
+2016-12-29 20:25:13,849 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:13 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 80. Total dropped metrics: 0.
+
+2016-12-29 20:25:13,849 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:13 I! Output [file] wrote batch of 9 metrics in 596.581µs
+
+2016-12-29 20:25:13,849 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:13 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 89. Total dropped metrics: 0.
+
+2016-12-29 20:25:13,849 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:13 I! Output [file] wrote batch of 9 metrics in 335.247µs
+
+2016-12-29 20:25:14,851 [DEBUG] agent:245 send 1510 bytes of data to collector
+2016-12-29 20:25:14,851 [DEBUG] agent:245 send 1512 bytes of data to collector
+2016-12-29 20:25:14,851 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:14 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 98. Total dropped metrics: 0.
+
+2016-12-29 20:25:14,851 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:14 I! Output [file] wrote batch of 9 metrics in 391.685µs
+
+2016-12-29 20:25:15,852 [DEBUG] agent:245 send 1510 bytes of data to collector
+2016-12-29 20:25:15,852 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:15 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 107. Total dropped metrics: 0.
+
+2016-12-29 20:25:15,852 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:15 I! Output [file] wrote batch of 9 metrics in 510.271µs
+
+2016-12-29 20:25:16,854 [DEBUG] agent:245 send 1511 bytes of data to collector
+2016-12-29 20:25:17,855 [DEBUG] agent:245 send 1511 bytes of data to collector
+2016-12-29 20:25:17,855 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:16 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 116. Total dropped metrics: 0.
+
+2016-12-29 20:25:17,855 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:16 I! Output [file] wrote batch of 9 metrics in 577.002µs
+
+2016-12-29 20:25:17,856 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:17 I! Output [file] buffer fullness: 9 / 10000 metrics. Total gathered metrics: 125. Total dropped metrics: 0.
+
+2016-12-29 20:25:17,856 [INFO] telegraf:266 STDERR: 2016/12/29 20:25:17 I! Output [file] wrote batch of 9 metrics in 307.845µs
+

@@ -121,6 +121,8 @@ WebService.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.h
 fastcgi2/request.h
 -
+boost/thread/tss.hpp
+-
 
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.cpp
 clocale
@@ -131,14 +133,16 @@ sstream
 -
 functional
 -
-Query.h
-/home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.h
 ../Model/Poll.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Poll.h
 ../Model/Vote.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Vote.h
+Query.h
+/home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.h
 
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.h
+../CassandraDriver/cassandra.h
+/home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/cassandra.h
 
 /home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.cpp
 StorageClient.h
@@ -159,10 +163,4 @@ vector
 /home/ubuntu/Desktop/GetPoll/GetPoll/Model/Vote.h
 ../CassandraDriver/cassandra.h
 /home/ubuntu/Desktop/GetPoll/GetPoll/CassandraDriver/cassandra.h
-
-/home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp
-iostream
--
-Network/WebService.h
-/home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.h
 

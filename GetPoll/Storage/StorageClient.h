@@ -19,16 +19,14 @@ extern int const QUERY_FAILURE;
 
 class StorageClient {
  private:
-     CassCluster* cluster;
-     CassSession* session;
+    CassCluster* cluster;
+    CassSession* session;
+    bool connected;
 
-     CassCluster* getCluster();
-     CassSession* getSession();
+    void connect(const char** message);
 
-     CassFuture* connect(const char** message);
-
-     int perform_query(std::string& query, const CassResult** result, const char **message);
-     int perform_batch_query(std::vector<std::string>& queries, const char**message);
+    int perform_query(CassStatement* statement, const CassResult** result, const char **message);
+    int perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char**message);
 
  public:
      const char* hosts;

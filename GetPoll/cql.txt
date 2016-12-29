@@ -2,7 +2,7 @@ DROP KEYSPACE IF EXISTS getpoll;
 
 CREATE KEYSPACE GetPoll WITH REPLICATION = {
 'class' : 'SimpleStrategy',
-'replication_factor' : 3
+'replication_factor' : 2
 } AND DURABLE_WRITES = true;
 
 CREATE TYPE getpoll.option ( id int, name text );

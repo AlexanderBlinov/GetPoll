@@ -8060,7 +8060,7 @@ cass_error_result_arg_type(const CassErrorResult* error_result,
  *
  * @param[in] iterator
  */
-CASS_EXPORT std::vector<PollOption>
+CASS_EXPORT void
 cass_iterator_free(CassIterator* iterator);
 
 /**

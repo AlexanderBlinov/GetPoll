@@ -11,7 +11,9 @@
  public:
      std::string name;
      int id;
-     int votes;
+     long long votes;
+
+     PollOption() : votes(0) {};
  };
 
 #endif //GETPOLL_POLLOPTION_H

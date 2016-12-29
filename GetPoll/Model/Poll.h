@@ -16,9 +16,9 @@ class Poll {
 public:
     std::string author, description, name, creationDateTime;
     std::vector<PollOption> options;
-    int totalVotes;
+    long long totalVotes;
 
-    Poll(std::string id) : id(id) {};
+    Poll(std::string id) : id(id), totalVotes(0) {};
 
     std::string const& getId() const;
 };

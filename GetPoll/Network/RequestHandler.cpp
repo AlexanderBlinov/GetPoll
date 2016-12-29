@@ -9,23 +9,24 @@
 
 
 class RequestHandler : virtual public fastcgi::Component, virtual public fastcgi::Handler {
+private:
+    WebService* service;
 
 public:
-        RequestHandler(fastcgi::ComponentContext *context) :
-                        fastcgi::Component(context) {
-        }
-        virtual ~RequestHandler() {
-        }
+    RequestHandler(fastcgi::ComponentContext *context) : fastcgi::Component(context) {
+        service = new WebService();
+    }
+
+    virtual ~RequestHandler() {}
 
 public:
-        virtual void onLoad() {
-        }
-        virtual void onUnload() {
-        }
-        virtual void handleRequest(fastcgi::Request *request, fastcgi::HandlerContext *context) {
-            WebService* service = new WebService();
-            service->web_service_process_request(request);
-        }
+    virtual void onLoad() {}
+
+    virtual void onUnload() {}
+
+    virtual void handleRequest(fastcgi::Request *request, fastcgi::HandlerContext *context) {
+        service->web_service_process_request(request);
+    }
 };
 
 FCGIDAEMON_REGISTER_FACTORIES_BEGIN()

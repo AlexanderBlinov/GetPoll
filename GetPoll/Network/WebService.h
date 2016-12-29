@@ -6,12 +6,15 @@
 #define GETPOLL_WEBSERVICE_H
 
 #include <fastcgi2/request.h>
+#include <boost/thread/tss.hpp>
 
 class StorageClient;
 
 class WebService {
 public:
-    StorageClient* storageClient;
+    static boost::thread_specific_ptr<StorageClient> storageClient;
+
+    StorageClient& getStorageClient();
 
     void web_service_get_polls(fastcgi::Request* request, std::string const* creationDateTime);
 
@@ -27,8 +30,8 @@ public:
     void web_service_delete_vote(fastcgi::Request* request, std::string const& id, std::string const& pollid);
 
 public:
-    WebService();
-    ~WebService();
+    WebService() = default;
+    ~WebService() = default;
 
     void web_service_process_request(fastcgi::Request* request);
 

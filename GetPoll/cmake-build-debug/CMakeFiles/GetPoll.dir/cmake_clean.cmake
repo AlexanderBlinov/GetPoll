@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/GetPoll.dir/main.cpp.o"
   "CMakeFiles/GetPoll.dir/Model/Poll.cpp.o"
   "CMakeFiles/GetPoll.dir/Model/Vote.cpp.o"
   "CMakeFiles/GetPoll.dir/Model/PollOption.cpp.o"
@@ -7,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GetPoll.dir/Storage/Query.cpp.o"
   "CMakeFiles/GetPoll.dir/Network/RequestHandler.cpp.o"
   "CMakeFiles/GetPoll.dir/Network/WebService.cpp.o"
-  "GetPoll.pdb"
-  "GetPoll"
+  "libGetPoll.pdb"
+  "libGetPoll.so"
 )
 
 # Per-language clean rules from dependency scanning.

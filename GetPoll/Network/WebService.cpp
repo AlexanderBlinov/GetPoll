@@ -26,7 +26,8 @@
 
 using json = nlohmann::json;
 
-void splitURI(std::string const& uri, std::vector<std::string> tokens) {
+std::vector<std::string> splitURI(std::string const& uri) {
+    std::vector<std::string> tokens;
     std::string s(uri);
     std::string delimiter = "/";
 
@@ -37,10 +38,11 @@ void splitURI(std::string const& uri, std::vector<std::string> tokens) {
         }
         s.erase(0, pos + delimiter.length());
     }
-
     if (s.length() > 0) {
         tokens.push_back(s);
     }
+
+    return tokens;
 }
 
 std::string generateUUID() {
@@ -55,32 +57,29 @@ std::string generateUUID() {
     return std::string(uuid_str);
 }
 
-WebService::WebService() {
-    storageClient = new StorageClient("127.0.0.1");
-}
+boost::thread_specific_ptr<StorageClient> WebService::storageClient;
 
-WebService::~WebService() {
-    delete storageClient;
+StorageClient& WebService::getStorageClient() {
+    if (!storageClient.get()) {
+        storageClient.reset(new StorageClient("127.0.0.1"));
+    }
+    return *storageClient.get();
 }
 
 void WebService::web_service_process_request(fastcgi::Request* request) {
-    request->setContentType("text/plain");
+    request->setContentType("application/json");
 
     auto uri = request->getURI();
-    std::vector<std::string> tokens;
-    splitURI(uri, tokens);
+    std::vector<std::string> tokens = splitURI(uri);
 
     auto method = request->getRequestMethod();
-
-    web_service_post_poll(request);
-    return;
-
     size_t tokensCount = tokens.size();
+
     if (tokensCount == 1) {
         auto& token = tokens.front();
         if (token == "polls") {
             if (method == HTTP_GET) {
-                web_service_get_polls(request, nullptr);
+                web_service_get_polls(request, NULL);
             } else if (method == HTTP_POST) {
                 web_service_post_poll(request);
             } else {
@@ -152,7 +151,7 @@ void WebService::web_service_get_polls(fastcgi::Request* request, std::string co
     const char *message = nullptr;
     std::vector<Poll> polls;
 
-    if (this->storageClient->polls_get(creationDateTime, polls, &message) == QUERY_FAILURE) {
+    if (getStorageClient().polls_get(creationDateTime, polls, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -187,7 +186,7 @@ void WebService::web_service_get_poll(fastcgi::Request* request, std::string con
     const char *message = nullptr;
     std::vector<Poll> polls;
 
-    if (this->storageClient->poll_get(id, polls, &message) == QUERY_FAILURE) {
+    if (getStorageClient().poll_get(id, polls, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -218,75 +217,68 @@ void WebService::web_service_get_poll(fastcgi::Request* request, std::string con
                   { "options", optionsJson },
                   { "totalVotes", poll.totalVotes } };
 
+    printf("%s", json.dump().c_str());
     std::stringbuf buf(json.dump());
     request->write(&buf);
     request->setStatus(HTTP_STATUS_SUCCESS);
 }
 
 void WebService::web_service_post_poll(fastcgi::Request* request) {
-//    fastcgi::DataBuffer dataBuff = request->requestBody();
-//    if (dataBuff.empty()) {
-//        request->setStatus(HTTP_STATUS_BAD_REQUEST);
-//        return;
-//    }
-//
-//    std::string body;
-//    dataBuff.toString(body);
-//    auto json = json::parse(body);
-//
-//    if (!json["name"].is_string()
-//        || !json["description"].is_string()
-//        || !json["author"].is_string()
-//        || !json["options"].is_array()
-//        || json["options"].empty()) {
-//        request->setStatus(HTTP_STATUS_BAD_REQUEST);
-//        return;
-//    }
-
-    Poll poll(generateUUID());
-//    poll.name = json["name"];
-//    poll.description = json["description"];
-//    poll.author = json["author"];
-    poll.name = "name";
-    poll.description = "description";
-    poll.author = "author";
-
-    std::vector<PollOption> options;
-//    for (json::iterator it = json["options"].begin(); it != json["options"].end(); ++it) {
-//        if ((*it).find("id") == (*it).end()
-//            || (*it).find("name") == (*it).end()) {
-//            request->setStatus(HTTP_STATUS_BAD_REQUEST);
-//            return;
-//        }
-//        PollOption option;
-//        option.id = it.value()["id"];
-//        option.id = it.value()["name"];
-//        options.push_back(option);
-//    }
-    PollOption option;
-    option.id = 1;
-    option.name = "name";
-    options.push_back(option);
-
-    poll.options = options;
-
-    const char* message = nullptr;
-    if (this->storageClient->poll_new(poll, &message) == QUERY_FAILURE) {
-//        request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
-//        if (message) {
-//            std::stringbuf buffer(message);
-//            request->write(&buffer);
-//        }
+    fastcgi::DataBuffer dataBuff = request->requestBody();
+    if (dataBuff.empty()) {
+        request->setStatus(HTTP_STATUS_BAD_REQUEST);
         return;
     }
 
-//    request->setHeader("Location", "/polls/" + poll.getId());
-//    request->setStatus(HTTP_STATUS_CREATED);
+    std::string body;
+    dataBuff.toString(body);
+    auto json = json::parse(body);
+
+    if (!json["name"].is_string()
+        || !json["description"].is_string()
+        || !json["author"].is_string()
+        || !json["options"].is_array()
+        || json["options"].empty()) {
+        request->setStatus(HTTP_STATUS_BAD_REQUEST);
+        return;
+    }
+
+    Poll poll(generateUUID());
+    poll.name = json["name"];
+    poll.description = json["description"];
+    poll.author = json["author"];
+
+    std::vector<PollOption> options;
+    for (json::iterator it = json["options"].begin(); it != json["options"].end(); ++it) {
+        if ((*it).find("id") == (*it).end()
+            || (*it).find("name") == (*it).end()) {
+            request->setStatus(HTTP_STATUS_BAD_REQUEST);
+            return;
+        }
+        PollOption option;
+        option.id = it.value()["id"];
+        option.id = it.value()["name"];
+        options.push_back(option);
+    }
+    poll.options = options;
+
+    const char* message = nullptr;
+    if (getStorageClient().poll_new(poll, &message) == QUERY_FAILURE) {
+        request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
+        if (message) {
+            std::stringbuf buffer(message);
+            request->write(&buffer);
+        }
+        return;
+    }
+
+    request->setHeader("Location", "/polls/" + poll.getId());
+    request->setStatus(HTTP_STATUS_CREATED);
 }
 
 void WebService::web_service_delete_poll(fastcgi::Request* request, std::string const& id) {
     const char* message = nullptr;
-    if (this->storageClient->poll_delete(id, &message) == QUERY_FAILURE) {
+    if (getStorageClient().poll_delete(id, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -302,7 +294,7 @@ void WebService::web_service_get_votes(fastcgi::Request* request, std::string co
     const char *message = nullptr;
     std::vector<Vote> votes;
 
-    if (this->storageClient->votes_get(id, votes, &message) == QUERY_FAILURE) {
+    if (getStorageClient().votes_get(id, votes, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -331,7 +323,7 @@ void WebService::web_service_get_vote(fastcgi::Request* request, std::string con
     const char *message = nullptr;
     std::vector<Vote> votes;
 
-    if (this->storageClient->vote_get(id, votes, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_get(id, votes, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -379,7 +371,7 @@ void WebService::web_service_post_vote(fastcgi::Request* request, std::string co
     vote.optionId = json["optionId"];
 
     const char* message = nullptr;
-    if (this->storageClient->vote_new(id, vote, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_new(id, vote, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -415,7 +407,7 @@ void WebService::web_service_put_vote(fastcgi::Request* request, std::string con
     vote.optionId = json["optionId"];
 
     const char* message = nullptr;
-    if (this->storageClient->vote_update(pollid, vote, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_update(pollid, vote, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -430,7 +422,7 @@ void WebService::web_service_put_vote(fastcgi::Request* request, std::string con
 void WebService::web_service_delete_vote(fastcgi::Request* request, std::string const& id, std::string const& pollid) {
     const char* message = nullptr;
     std::vector<Vote> votes;
-    if (this->storageClient->vote_get(id, votes, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_get(id, votes, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);
@@ -444,7 +436,7 @@ void WebService::web_service_delete_vote(fastcgi::Request* request, std::string 
     }
 
     auto vote = votes.front();
-    if (this->storageClient->vote_delete(pollid, vote, &message) == QUERY_FAILURE) {
+    if (getStorageClient().vote_delete(pollid, vote, &message) == QUERY_FAILURE) {
         request->setStatus(HTTP_STATUS_INTERNAL_ERROR);
         if (message) {
             std::stringbuf buffer(message);

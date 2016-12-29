@@ -11,7 +11,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ubuntu/Desktop/GetPoll/GetPoll/Network/WebService.cpp" "/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles/GetPoll.dir/Network/WebService.cpp.o"
   "/home/ubuntu/Desktop/GetPoll/GetPoll/Storage/Query.cpp" "/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles/GetPoll.dir/Storage/Query.cpp.o"
   "/home/ubuntu/Desktop/GetPoll/GetPoll/Storage/StorageClient.cpp" "/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles/GetPoll.dir/Storage/StorageClient.cpp.o"
-  "/home/ubuntu/Desktop/GetPoll/GetPoll/main.cpp" "/home/ubuntu/Desktop/GetPoll/GetPoll/cmake-build-debug/CMakeFiles/GetPoll.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

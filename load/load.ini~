@@ -10,8 +10,7 @@ address=127.0.0.1
 port=8080
 rps_schedule=line(1, 1100, 2m) const(1100, 5m) 
 uris=/polls
-	/news/www.bbc.com/sport/football/38428342
-/news?start_dt=2016-12-22T16:00:00Z&days_diff=-100&source_uri=
+
 
 [rcheck]
 mem_limit=250

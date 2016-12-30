@@ -13,6 +13,7 @@ int const QUERY_FAILURE = 1;
 
 
 StorageClient::StorageClient(const char* hosts) : hosts(hosts), connected(false) {
+    uuidGen = cass_uuid_gen_new();
     session = cass_session_new();
     cluster = cass_cluster_new();
     cass_cluster_set_contact_points(cluster, hosts);
@@ -25,6 +26,7 @@ StorageClient::~StorageClient() {
         cass_future_free(close_future);
     }
 
+    cass_uuid_gen_free(uuidGen);
     cass_cluster_free(cluster);
     cass_session_free(session);
 }
@@ -486,4 +488,14 @@ int StorageClient::vote_delete(std::string const& pollid, Vote const& vote, cons
     statements.push_back(update_option_votes_query(pollid, vote.optionId, -1));
 
     return perform_batch_query(CASS_BATCH_TYPE_COUNTER, statements, message);
+}
+
+std::string StorageClient::generateUUID() {
+    CassUuid uuid;
+    cass_uuid_gen_time(uuidGen, &uuid);
+
+    char uuid_str[CASS_UUID_STRING_LENGTH];
+    cass_uuid_string(uuid, uuid_str);
+
+    return std::string(uuid_str);
 }

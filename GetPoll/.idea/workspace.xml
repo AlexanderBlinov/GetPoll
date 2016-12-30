@@ -28,90 +28,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WebService.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Network/WebService.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7632">
-              <caret line="424" column="37" lean-forward="false" selection-start-line="424" selection-start-column="37" selection-end-line="424" selection-end-column="37" />
-              <folding>
-                <marker date="1483034603532" expanded="true" signature="50:216" ph="..." />
-                <marker date="1483034603532" expanded="true" signature="660:1053" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="1082:1343" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="1396:1555" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="1607:1763" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="1881:2016" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="2090:5225" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="5330:6452" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="6542:7786" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="7854:9412" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="9505:9857" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="9948:10828" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="10945:11726" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="11817:12771" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="12888:13757" ph="{...}" />
-                <marker date="1483034603532" expanded="true" signature="13877:14660" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebService.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Network/WebService.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding>
-                <marker date="1483034623421" expanded="false" signature="109:161" ph="..." />
-                <marker date="1483034623421" expanded="true" signature="202:1270" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Query.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Storage/Query.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-              <folding>
-                <element signature="e#41#59#0" expanded="true" />
-                <marker date="1483019471021" expanded="true" signature="471:1017" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <marker date="1483028750627" expanded="true" signature="50:128" ph="..." />
-                <marker date="1483028750627" expanded="true" signature="164:1121" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageClient.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Storage/StorageClient.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2502">
-              <caret line="139" column="36" lean-forward="false" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="55" />
-              <folding>
-                <element signature="e#41#58#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -173,14 +95,14 @@
         <option value="$PROJECT_DIR$/Model/Poll.cpp" />
         <option value="$PROJECT_DIR$/cql.txt" />
         <option value="$PROJECT_DIR$/Model/Poll.h" />
-        <option value="$PROJECT_DIR$/Storage/StorageClient.h" />
         <option value="$PROJECT_DIR$/Storage/Query.h" />
-        <option value="$PROJECT_DIR$/Storage/StorageClient.cpp" />
-        <option value="$PROJECT_DIR$/Storage/Query.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Network/WebService.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Network/WebService.h" />
+        <option value="$PROJECT_DIR$/Storage/StorageClient.cpp" />
+        <option value="$PROJECT_DIR$/Storage/StorageClient.h" />
+        <option value="$PROJECT_DIR$/Network/WebService.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Storage/Query.cpp" />
       </list>
     </option>
   </component>
@@ -490,35 +412,36 @@
       <workItem from="1483010530117" duration="2474000" />
       <workItem from="1483013243961" duration="6597000" />
       <workItem from="1483028475051" duration="1248000" />
+      <workItem from="1483055011858" duration="1711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137751000" />
+    <option name="totallyTimeSpent" value="139462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1215" height="804" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24855967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3541963" sideWeight="0.49711934" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3541963" sideWeight="0.49711934" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22759601" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.50288063" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997155" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="635" y="366" width="555" height="191" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997155" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -554,11 +477,6 @@
           <url>file://$PROJECT_DIR$/Storage/Query.cpp</url>
           <line>157</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Network/WebService.cpp</url>
-          <line>175</line>
-          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="50" />
@@ -800,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Storage/StorageClient.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/4.9/ext/atomicity.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -821,10 +732,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/fastcgi/Fastcgi-Daemon/library/request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network/WebService.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/StorageClient.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network/WebService.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1138">
+          <caret line="374" column="47" lean-forward="false" selection-start-line="374" selection-start-column="47" selection-end-line="374" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Storage/StorageClient.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2502">
-          <caret line="139" column="36" lean-forward="false" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="55" />
+        <state relative-caret-position="104">
+          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding>
             <element signature="e#41#58#0" expanded="true" />
           </folding>
@@ -833,55 +783,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Storage/Query.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+        <state relative-caret-position="298">
+          <caret line="113" column="63" lean-forward="false" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="69" />
           <folding>
             <element signature="e#41#59#0" expanded="true" />
-            <marker date="1483019471021" expanded="true" signature="471:1017" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/fastcgi/Fastcgi-Daemon/library/request.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <marker date="1483028750627" expanded="true" signature="50:128" ph="..." />
-            <marker date="1483028750627" expanded="true" signature="164:1121" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Network/WebService.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7632">
-          <caret line="424" column="37" lean-forward="false" selection-start-line="424" selection-start-column="37" selection-end-line="424" selection-end-column="37" />
-          <folding>
-            <marker date="1483034603532" expanded="true" signature="50:216" ph="..." />
-            <marker date="1483034603532" expanded="true" signature="660:1053" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="1082:1343" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="1396:1555" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="1607:1763" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="1881:2016" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="2090:5225" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="5330:6452" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="6542:7786" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="7854:9412" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="9505:9857" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="9948:10828" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="10945:11726" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="11817:12771" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="12888:13757" ph="{...}" />
-            <marker date="1483034603532" expanded="true" signature="13877:14660" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -891,17 +796,6 @@
         <state relative-caret-position="108">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Network/WebService.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <marker date="1483034623421" expanded="false" signature="109:161" ph="..." />
-            <marker date="1483034623421" expanded="true" signature="202:1270" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>

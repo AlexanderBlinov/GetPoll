@@ -21,32 +21,36 @@ class StorageClient {
  private:
     CassCluster* cluster;
     CassSession* session;
+    CassUuidGen* uuidGen;
+
+    const char* hosts;
     bool connected;
 
     void connect(const char** message);
 
-    int perform_query(CassStatement* statement, const CassResult** result, const char **message);
-    int perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char**message);
+    int perform_query(CassStatement* statement, const CassResult** result, const char **message);int perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char**message);
 
  public:
-     const char* hosts;
 
-     StorageClient(const char* hosts);
-     ~StorageClient();
 
-     int polls_get(std::string const* creationDateTime, std::vector<Poll>& result, const char** message);
-     int poll_get(std::string const& id, std::vector<Poll>& result, const char** message);
+    StorageClient(const char* hosts);
+    ~StorageClient();
 
-     int votes_get(std::string const& pollid, std::vector<Vote>& result, const char** message);
-     int vote_get(std::string const& id, std::string const& pollid, std::vector<Vote>& result, const char** message);
+    std::string generateUUID();
 
-     int poll_new(Poll const& poll, const char** message);
-     int vote_new(std::string const& pollid, Vote const& vote, const char** message);
+    int polls_get(std::string const* creationDateTime, std::vector<Poll>& result, const char** message);
+    int poll_get(std::string const& id, std::vector<Poll>& result, const char** message);
 
-     int vote_update(std::string const& pollid, Vote const& vote, const char** message);
+    int votes_get(std::string const& pollid, std::vector<Vote>& result, const char** message);
+    int vote_get(std::string const& id, std::string const& pollid, std::vector<Vote>& result, const char** message);
 
-     int poll_delete(std::string const& id, const char** message);
-     int vote_delete(std::string const& pollid, Vote const& vote, const char** message);
+    int poll_new(Poll const& poll, const char** message);
+    int vote_new(std::string const& pollid, Vote const& vote, const char** message);
+
+    int vote_update(std::string const& pollid, Vote const& vote, const char** message);
+
+    int poll_delete(std::string const& id, const char** message);
+    int vote_delete(std::string const& pollid, Vote const& vote, const char** message);
  };
 
 

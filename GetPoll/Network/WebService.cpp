@@ -47,19 +47,6 @@ std::vector<std::string> splitURI(std::string const& uri) {
     return tokens;
 }
 
-std::string generateUUID() {
-    CassUuidGen* uuidGen = cass_uuid_gen_new();
-    CassUuid uuid;
-    cass_uuid_gen_time(uuidGen, &uuid);
-    cass_uuid_gen_free(uuidGen);
-
-    char uuid_str[CASS_UUID_STRING_LENGTH];
-    cass_uuid_string(uuid, uuid_str);
-
-    return std::string(uuid_str);
-}
-
-
 
 std::string encodedDate(std::string const& date) {
     std::string eDate(date);
@@ -262,7 +249,7 @@ void WebService::web_service_post_poll(fastcgi::Request* request) {
         return;
     }
 
-    Poll poll(generateUUID());
+    Poll poll(getStorageClient().generateUUID());
     poll.name = json["name"];
     poll.description = json["description"];
     poll.author = json["author"];
@@ -385,7 +372,7 @@ void WebService::web_service_post_vote(fastcgi::Request* request, std::string co
         return;
     }
 
-    Vote vote(generateUUID());
+    Vote vote(getStorageClient().generateUUID());
     vote.author = json["author"];
     vote.optionId = json["optionId"];
 

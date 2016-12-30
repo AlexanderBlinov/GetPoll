@@ -175,4 +175,6 @@ API не будет RESTful, так как в нем не будет реали�
 
 ## Load testing
 
-[Load Testing 1 - 350 rps](https://overload.yandex.net/5792#tab=test_data&tags=&plot_groups=main&machines=&metrics=&slider_start=1483056585&slider_end=1483056824)
+[Load Testing 1 - 400 rps](https://overload.yandex.net/5792#tab=test_data&tags=&plot_groups=main&machines=&metrics=&slider_start=1483056585&slider_end=1483056824)
+
+[Load Testing 2 - 500 rps](https://overload.yandex.net/5869#tab=test_data&tags=&plot_groups=main&machines=&metrics=&slider_start=1483100207&slider_end=1483100446)

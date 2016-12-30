@@ -111,7 +111,7 @@ CassStatement* insert_poll_query(Poll const& poll) {
     cass_statement_bind_string(statement, 2, poll.author.c_str());
     cass_statement_bind_string(statement, 3, poll.description.c_str());
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -128,7 +128,7 @@ CassStatement* insert_vote_query(std::string const& pollid, Vote const& vote) {
     std::hash<std::string> hash;
     cass_statement_bind_int32(statement, 4, hash(pollid) % 2);
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -139,7 +139,7 @@ CassStatement* update_option_votes_query(std::string const& pollid, int optionid
     cass_statement_bind_uuid(statement, 1, getUUID(pollid));
     cass_statement_bind_int32(statement, 2, optionid);
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -149,7 +149,7 @@ CassStatement* update_poll_votes_query(std::string const& pollid, long long coun
     cass_statement_bind_int64(statement, 0, count_delta);
     cass_statement_bind_uuid(statement, 1, getUUID(pollid));
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -160,7 +160,7 @@ CassStatement* update_vote_query(Vote const& vote, std::string const& pollid) {
     cass_statement_bind_uuid(statement, 1, getUUID(vote.getId()));
     cass_statement_bind_uuid(statement, 2, getUUID(pollid));
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -169,7 +169,7 @@ CassStatement* delete_poll_query(std::string const& pollid) {
     CassStatement* statement = cass_statement_new("DELETE FROM getpoll.polls WHERE id = ?;", 1);
     cass_statement_bind_uuid(statement, 0, getUUID(pollid));
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -179,7 +179,7 @@ CassStatement* delete_vote_query(std::string const& voteid, std::string const& p
     cass_statement_bind_uuid(statement, 0, getUUID(voteid));
     cass_statement_bind_uuid(statement, 1, getUUID(pollid));
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }
@@ -188,7 +188,7 @@ CassStatement* delete_votes_query(std::string const& pollid) {
     CassStatement* statement = cass_statement_new("DELETE FROM getpoll.votes WHERE pollid = ? AND hash_prefix IN (0, 1);", 1);
     cass_statement_bind_uuid(statement, 0, getUUID(pollid));
 
-    cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
+    cass_statement_set_consistency(statement, CASS_CONSISTENCY_ONE);
 
     return statement;
 }

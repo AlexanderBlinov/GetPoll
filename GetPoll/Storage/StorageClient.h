@@ -23,18 +23,21 @@ class StorageClient {
     CassSession* session;
     CassUuidGen* uuidGen;
 
-    const char* hosts;
-    bool connected;
+    StorageClient();
+    ~StorageClient();
 
-    void connect(const char** message);
+    void connect();
 
-    int perform_query(CassStatement* statement, const CassResult** result, const char **message);int perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char**message);
+    int perform_query(CassStatement* statement, const CassResult** result, const char **message);
+    int perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char**message);
 
  public:
 
+    static StorageClient& getInstance() {
+     static StorageClient instance;
+     return  instance;
+    }
 
-    StorageClient(const char* hosts);
-    ~StorageClient();
 
     std::string generateUUID();
 

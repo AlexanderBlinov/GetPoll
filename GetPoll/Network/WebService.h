@@ -7,14 +7,11 @@
 
 #include <fastcgi2/request.h>
 #include <boost/thread/tss.hpp>
-
-class StorageClient;
+#include "../Storage/StorageClient.h"
 
 class WebService {
-private:
-    static boost::thread_specific_ptr<StorageClient> storageClient;
-
-    StorageClient& getStorageClient();
+public:
+    StorageClient& storageClient;
 
     void web_service_get_polls(fastcgi::Request* request, std::string const* creationDateTime);
 
@@ -30,7 +27,7 @@ private:
     void web_service_delete_vote(fastcgi::Request* request, std::string const& id, std::string const& pollid);
 
 public:
-    WebService() = default;
+    WebService() : storageClient(StorageClient::getInstance()) {};
     ~WebService() = default;
 
     void web_service_process_request(fastcgi::Request* request);

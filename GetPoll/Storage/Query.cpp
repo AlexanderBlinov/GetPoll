@@ -31,7 +31,7 @@ CassStatement* select_polls_query(int limit, std::string const* creationDateTime
         sstream << " WHERE creationDateTime < '";
         sstream << creationDateTime->c_str() << "'";
     }
-    sstream << " LIMIT ? ALLOW FILTERING;";
+    sstream << " LIMIT ?;";
 
     CassStatement* statement = cass_statement_new(sstream.str().c_str(), params);
     cass_statement_bind_int32(statement, 0, limit);

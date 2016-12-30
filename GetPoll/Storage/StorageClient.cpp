@@ -141,7 +141,7 @@ int StorageClient::polls_get(std::string const* creationDateTime, std::vector<Po
             char buf[30];
             std::strftime(buf, 30, "%Y-%m-%dT%H:%M:%S%z", formatedTime);
 
-            Poll poll(std::string(id, CASS_UUID_STRING_LENGTH - 1));
+            Poll poll(std::string(id));
             poll.creationDateTime = std::string(buf);
             poll.name = std::string(name, name_length);
 
@@ -254,16 +254,15 @@ int StorageClient::poll_get(std::string const& id, std::vector<Poll>& result, co
             return statusCode;
         }
 
-        iter = cass_iterator_from_result(query_result);
-        cass_result_free(query_result);
-        while (cass_iterator_next(iter)) {
-            const CassRow* optrow = cass_iterator_get_row(iter);
-            const CassValue* val = cass_row_get_column_by_name(optrow, "id");
+        CassIterator* iterator = cass_iterator_from_result(query_result);
+        while (cass_iterator_next(iterator)) {
+            const CassRow* optrow = cass_iterator_get_row(iterator);
+            const CassValue* val = cass_row_get_column_by_name(optrow, "optionid");
             int optionid;
             cass_value_get_int32(val, &optionid);
             for (auto it = poll.options.begin(); it != poll.options.end(); ++it) {
                 if (it->id == optionid) {
-                    val = cass_row_get_column_by_name(row, "votes");
+                    val = cass_row_get_column_by_name(optrow, "votes");
                     long long votes;
                     cass_value_get_int64(val, &votes);
                     it->votes = votes;
@@ -271,9 +270,10 @@ int StorageClient::poll_get(std::string const& id, std::vector<Poll>& result, co
                 }
             }
         }
-
-        cass_iterator_free(iter);
         result.push_back(poll);
+
+        cass_iterator_free(iterator);
+        cass_result_free(query_result);
     }
 
     return statusCode;

@@ -12,49 +12,33 @@ int const QUERY_SUCCESS = 0;
 int const QUERY_FAILURE = 1;
 
 
-StorageClient::StorageClient(const char* hosts) : hosts(hosts), connected(false) {
+StorageClient::StorageClient() {
     uuidGen = cass_uuid_gen_new();
     session = cass_session_new();
     cluster = cass_cluster_new();
-    cass_cluster_set_contact_points(cluster, hosts);
+    cass_cluster_set_contact_points(cluster, "127.0.0.1");
+    connect();
 }
 
 StorageClient::~StorageClient() {
-    if (connected) {
-        CassFuture* close_future = cass_session_close(session);
-        cass_future_wait(close_future);
-        cass_future_free(close_future);
-    }
+    CassFuture* close_future = cass_session_close(session);
+    cass_future_wait(close_future);
+    cass_future_free(close_future);
 
     cass_uuid_gen_free(uuidGen);
     cass_cluster_free(cluster);
     cass_session_free(session);
 }
 
-void StorageClient::connect(const char** message) {
+void StorageClient::connect() {
     CassFuture* connect_future;
     connect_future = cass_session_connect(session, cluster);
-    if (cass_future_error_code(connect_future) == CASS_OK) {
-        connected = true;
-    } else {
-        connected = false;
-        if (message) {
-            size_t messageLength;
-            cass_future_error_message(connect_future, message, &messageLength);
-        }
-    }
 
     cass_future_free(connect_future);
 }
 
 int StorageClient::perform_query(CassStatement* statement, const CassResult** result, const char** message) {
     int statusCode = QUERY_FAILURE;
-    if (!connected) {
-        connect(message);
-        if (!connected)  {
-            return  statusCode;
-        }
-    }
 
     CassFuture* result_future = cass_session_execute(session, statement);
     cass_statement_free(statement);
@@ -74,12 +58,6 @@ int StorageClient::perform_query(CassStatement* statement, const CassResult** re
 
 int StorageClient::perform_batch_query(CassBatchType type, std::vector<CassStatement*>& statements, const char **message) {
     int statusCode = QUERY_FAILURE;
-    if (!connected) {
-        connect(message);
-        if (!connected) {
-            return statusCode;
-        }
-    }
 
     CassBatch* batch = cass_batch_new(type);
 
@@ -106,7 +84,7 @@ int StorageClient::perform_batch_query(CassBatchType type, std::vector<CassState
 int StorageClient::polls_get(std::string const* creationDateTime, std::vector<Poll>& result, const char** message) {
     const CassResult* query_result = NULL;
 
-    int limit = 10;
+    int limit = 50;
     CassStatement* statement = select_polls_query(limit, creationDateTime);
     int statusCode = perform_query(statement, &query_result, message);
     if (statusCode != QUERY_SUCCESS) {
@@ -141,7 +119,7 @@ int StorageClient::polls_get(std::string const* creationDateTime, std::vector<Po
             char buf[30];
             std::strftime(buf, 30, "%Y-%m-%dT%H:%M:%S%z", formatedTime);
 
-            Poll poll(std::string(id));
+            Poll poll(std::string(id, CASS_UUID_STRING_LENGTH - 1));
             poll.creationDateTime = std::string(buf);
             poll.name = std::string(name, name_length);
 
@@ -221,7 +199,7 @@ int StorageClient::poll_get(std::string const& id, std::vector<Poll>& result, co
                 } else if (str == "id") {
                     int optid;
                     cass_value_get_int32(val, &optid);
-                    option.name = optid;
+                    option.id = optid;
                 }
             }
             cass_iterator_free(opt_iter);

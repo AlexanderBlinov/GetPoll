@@ -155,7 +155,7 @@ API не будет RESTful, так как в нем не будет реали�
 
 # Реализация
 
-Веб сервис реализован на C++ с использованием [fastcgi-daemon2](https://github.com/lmovsesjan/Fastcgi-Daemon) и [DataStax cpp-driver for Apache Cassandra](https://github.com/datastax/cpp-driver). Для развертывания кластера с Cassandra изспользовался [Cassandra Cluster Manager](https://github.com/pcmanus/ccm). Он позволяет создавать кластер для Cassandra с нежным количеством узлов на одной машине.
+Веб сервис реализован на C++ с использованием [fastcgi-daemon2](https://github.com/lmovsesjan/Fastcgi-Daemon) и [DataStax cpp-driver for Apache Cassandra](https://github.com/datastax/cpp-driver). Для развертывания кластера с Cassandra изспользовался [Cassandra Cluster Manager](https://github.com/pcmanus/ccm). Он позволяет создавать кластер для Cassandra с нужным количеством узлов на одной машине.
 
 [Source code](https://github.com/AlexanderBlinov/GetPoll/tree/master/GetPoll)
 

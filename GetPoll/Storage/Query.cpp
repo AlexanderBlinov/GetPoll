@@ -8,7 +8,6 @@
 #include <functional>
 #include <chrono>
 #include <string.h>
-#include <time.h>
 
 #include "../Model/Poll.h"
 #include "../Model/Vote.h"
@@ -103,7 +102,7 @@ CassStatement* insert_poll_query(Poll const& poll) {
             sstream << ", ";
         }
     }
-    sstream << " ] ) IF NOT EXISTS;";
+    sstream << " ] );";
 
     CassStatement* statement = cass_statement_new(sstream.str().c_str(), 4);
     cass_statement_bind_uuid(statement, 0, getUUID(poll.getId()));

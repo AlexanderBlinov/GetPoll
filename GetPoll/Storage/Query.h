@@ -10,6 +10,8 @@
 class Poll;
 class Vote;
 
+CassUuid getUUID(std::string const& uuidStr);
+
 CassStatement* select_polls_query(int limit, std::string const* creationDateTime);
 
 CassStatement* select_poll_query(std::string const& pollid);

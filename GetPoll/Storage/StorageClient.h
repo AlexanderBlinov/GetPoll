@@ -23,6 +23,8 @@ class StorageClient {
     CassSession* session;
     CassUuidGen* uuidGen;
 
+    CassPrepared const* insertPollPrepared;
+
     StorageClient();
     ~StorageClient();
 

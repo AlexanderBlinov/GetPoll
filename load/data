@@ -1,0 +1,1 @@
+POST||/polls||good||{"name":"Poll1","author":"Joan Doe","description":"Poll 1 by Joan","options":[{"id":1,"name":"1st option"},{"id":2,"name":"2nd option"}]}
